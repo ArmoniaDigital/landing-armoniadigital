@@ -1,10 +1,13 @@
 import { useRef, useState } from "react";
-import { ArrowLeft, ArrowRight, CheckCircle2, LoaderCircle } from "lucide-react";
+import { ArrowLeft, ArrowRight, Building2, CalendarDays, CheckCircle2, LoaderCircle, UserRound } from "lucide-react";
 import "./LeadRequest.css";
 
 const words = {
   es: {
-    back: "Volver", title: "Hablemos de tu web.", purchase: "Demos el siguiente paso.",
+    back: "Volver al inicio", title: "Antes de agendar tu llamada, cuéntanos sobre tu negocio.", purchase: "Tu próxima web empieza aquí.",
+    kicker: "Agenda tu llamada", purchaseKicker: "Empecemos con tu web", contactTitle: "Contacto", businessTitle: "Tu proyecto",
+    nextTitle: "Después de este paso", nextDetail: "Podrás elegir el día y la hora de tu llamada.", paymentDetail: "Te contactaremos para coordinar el pago. No se realiza ningún cobro en este paso.",
+    actionTitle: "Ya casi tienes tu llamada lista.", paymentActionTitle: "Demos el siguiente paso.",
     intro: "Solo necesitamos estos datos antes de agendar la llamada.",
     purchaseIntro: "Déjanos tus datos para coordinar el pago de tu plan.",
     name: "Tu nombre", email: "Correo electrónico", business: "Nombre de tu negocio o proyecto",
@@ -17,7 +20,10 @@ const words = {
     paymentNote: "El proyecto se activa cuando confirmemos tu pago. Después recibirás el formulario con los detalles de tu web.",
   },
   en: {
-    back: "Back", title: "Let's talk about your website.", purchase: "Let's take the next step.",
+    back: "Back to home", title: "Before we talk, tell us a little about your business.", purchase: "Your next website starts here.",
+    kicker: "Book your call", purchaseKicker: "Let's start your website", contactTitle: "Contact", businessTitle: "Your project",
+    nextTitle: "What comes next", nextDetail: "You'll choose the day and time for your call.", paymentDetail: "We'll contact you to arrange payment. You won't be charged in this step.",
+    actionTitle: "Your call is almost ready.", paymentActionTitle: "Let's take the next step.",
     intro: "Just a few details before you choose a time for our call.",
     purchaseIntro: "Leave your details so we can arrange payment for your plan.",
     name: "Your name", email: "Email address", business: "Business or project name",
@@ -64,10 +70,17 @@ export default function LeadRequest({ send, logo, brand, calendar, language = "e
         <a href="#" className="lead-back"><ArrowLeft size={18} aria-hidden="true" />{text.back}</a>
       </header>
       <section className="lead-content" aria-labelledby="lead-title">
+        <div className="lead-hero">
         <div className="lead-intro">
-          <span className="lead-brand">{brand}</span>
+          <span className="lead-brand">{purchase ? text.purchaseKicker : text.kicker}</span>
           <h1 id="lead-title">{purchase ? text.purchase : text.title}</h1>
           <p>{purchase ? text.purchaseIntro : text.intro}</p>
+        </div>
+        <aside className="lead-next">
+          <CalendarDays size={24} aria-hidden="true" />
+          <h2>{text.nextTitle}</h2>
+          <p>{purchase ? text.paymentDetail : text.nextDetail}</p>
+        </aside>
         </div>
         {status === "received" ? (
           <div className="lead-success" ref={successRef} tabIndex={-1} role="status">
@@ -79,16 +92,25 @@ export default function LeadRequest({ send, logo, brand, calendar, language = "e
           </div>
         ) : (
           <form onSubmit={submit} className="lead-form" aria-busy={status === "sending"}>
+            <div className="lead-fields">
             <fieldset disabled={status === "sending"}>
+              <legend><UserRound size={22} aria-hidden="true" />{text.contactTitle}</legend>
               <label htmlFor="lead-name">{text.name}<input id="lead-name" name="name" autoComplete="name" required maxLength={100} pattern={".*\\S.*"} /></label>
               <label htmlFor="lead-email">{text.email}<input id="lead-email" name="email" type="email" autoComplete="email" required maxLength={254} /></label>
-              <label htmlFor="lead-business">{text.business}<input id="lead-business" name="business" autoComplete="organization" required maxLength={200} pattern={".*\\S.*"} /></label>
               <label htmlFor="lead-phone">{text.phone}<input id="lead-phone" name="phone" type="tel" autoComplete="tel" maxLength={40} pattern="[+0-9 ]{5,40}" /></label>
+            </fieldset>
+            <fieldset disabled={status === "sending"}>
+              <legend><Building2 size={22} aria-hidden="true" />{text.businessTitle}</legend>
+              <label htmlFor="lead-business">{text.business}<input id="lead-business" name="business" autoComplete="organization" required maxLength={200} pattern={".*\\S.*"} /></label>
               {purchase && <label htmlFor="lead-plan">{text.plan}<select id="lead-plan" name="plan" required value={plan} onChange={e => setPlan(e.target.value)}><option value="">{text.choose}</option><option value="launch">Launch</option><option value="business">Business</option><option value="store">Store</option><option value="personalizado">{text.custom}</option></select></label>}
             </fieldset>
+            </div>
             {status === "error" && <p className="lead-error" role="alert" tabIndex={-1} ref={errorRef}>{text.error}</p>}
+            <div className="lead-submit">
+            <h2>{purchase ? text.paymentActionTitle : text.actionTitle}</h2>
             <p className="lead-note">{purchase ? text.paymentNote : text.privacy}</p>
             <button className="lead-action" type="submit" disabled={status === "sending"}>{status === "sending" ? <><LoaderCircle className="lead-spinner" size={18} aria-hidden="true" />{text.sending}</> : <>{purchase ? text.request : text.submit}<ArrowRight size={18} aria-hidden="true" /></>}</button>
+            </div>
           </form>
         )}
       </section>

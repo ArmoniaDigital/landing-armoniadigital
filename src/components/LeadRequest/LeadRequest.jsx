@@ -6,13 +6,13 @@ const words = {
   es: {
     back: "Volver al inicio", title: "Antes de agendar tu llamada, cuéntanos sobre tu negocio.", purchase: "Tu próxima web empieza aquí.",
     kicker: "Agenda tu llamada", purchaseKicker: "Empecemos con tu web", contactTitle: "Contacto", businessTitle: "Tu proyecto",
-    nextTitle: "Después de este paso", nextDetail: "Podrás elegir el día y la hora de tu llamada.", paymentDetail: "Te contactaremos para coordinar el pago. No se realiza ningún cobro en este paso.",
+    nextTitle: "Después, agenda tu llamada.", nextDetail: "Al enviar tus datos, podrás elegir un horario para que revisemos tu idea y resolvamos tus dudas. La asesoría es gratis y sin compromiso.", paymentNextTitle: "Después de este paso", paymentDetail: "Te contactaremos para coordinar el pago. No se realiza ningún cobro en este paso.",
     actionTitle: "Ya casi tienes tu llamada lista.", paymentActionTitle: "Demos el siguiente paso.",
-    intro: "Solo necesitamos estos datos antes de agendar la llamada.",
+    intro: "Cuéntanos lo básico de tu negocio. En la llamada te ayudaremos a definir qué necesita tu web antes de tomar una decisión.",
     purchaseIntro: "Déjanos tus datos para coordinar el pago de tu plan.",
     name: "Tu nombre", email: "Correo electrónico", business: "Nombre de tu negocio o proyecto",
     phone: "Teléfono (opcional)", plan: "Plan", choose: "Elige un plan",
-    custom: "Personalizado", submit: "Continuar para agendar", request: "Solicitar instrucciones de pago",
+    custom: "Personalizado", submit: "Continuar para agendar mi llamada", request: "Solicitar instrucciones de pago",
     sending: "Guardando solicitud…", error: "No pudimos confirmar tu solicitud. Tus datos siguen aquí; inténtalo de nuevo.",
     received: "Ya recibimos tus datos.", next: "Ahora puedes elegir el horario de tu llamada.",
     paymentNext: "Revisaremos tu solicitud y te contactaremos con las instrucciones de pago. Aún no se ha realizado ningún cobro.",
@@ -22,9 +22,9 @@ const words = {
   en: {
     back: "Back to home", title: "Before we talk, tell us a little about your business.", purchase: "Your next website starts here.",
     kicker: "Book your call", purchaseKicker: "Let's start your website", contactTitle: "Contact", businessTitle: "Your project",
-    nextTitle: "What comes next", nextDetail: "You'll choose the day and time for your call.", paymentDetail: "We'll contact you to arrange payment. You won't be charged in this step.",
+    nextTitle: "Next, book your call.", nextDetail: "After sending your details, choose a time to discuss your idea and ask your questions. The consultation is free, with no commitment.", paymentNextTitle: "What comes next", paymentDetail: "We'll contact you to arrange payment. You won't be charged in this step.",
     actionTitle: "Your call is almost ready.", paymentActionTitle: "Let's take the next step.",
-    intro: "Just a few details before you choose a time for our call.",
+    intro: "Tell us a little about your business. On the call, we'll help you work out what your website needs before you decide.",
     purchaseIntro: "Leave your details so we can arrange payment for your plan.",
     name: "Your name", email: "Email address", business: "Business or project name",
     phone: "Phone (optional)", plan: "Plan", choose: "Choose a plan",
@@ -78,7 +78,7 @@ export default function LeadRequest({ send, logo, brand, calendar, language = "e
         </div>
         <aside className="lead-next">
           <CalendarDays size={24} aria-hidden="true" />
-          <h2>{text.nextTitle}</h2>
+          <h2>{purchase ? text.paymentNextTitle : text.nextTitle}</h2>
           <p>{purchase ? text.paymentDetail : text.nextDetail}</p>
         </aside>
         </div>

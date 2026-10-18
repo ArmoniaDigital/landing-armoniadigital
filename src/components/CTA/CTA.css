@@ -1,0 +1,81 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Gothic&family=Inter:wght@300;400;500;600;700;800&display=swap");
+.cta-section {
+  padding: 100px 0;
+  background: var(--bg);
+}
+
+.cta-card {
+  position: relative;
+  overflow: visible;
+  background: #0b0f19;
+  border-radius: var(--radius-xl);
+  padding: 72px 40px;
+  text-align: center;
+  box-shadow: var(--shadow-lg);
+}
+
+.cta-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top right, rgba(47, 107, 255, 0.35), transparent 60%);
+  pointer-events: none;
+}
+
+.cta-tag {
+  display: inline-block;
+  padding: 8px 18px;
+  border-radius: var(--radius-pill);
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  margin-bottom: 24px;
+}
+
+.cta-card h2 {
+  color: #fff;
+  font-size: 38px;
+  max-width: 780px;
+  margin: 0 auto 32px;
+  position: relative;
+}
+
+.cta-primary {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  height: 56px;
+  padding: 0 32px;
+  border-radius: var(--radius-pill);
+  background: var(--gradient-primary);
+  color: #fff;
+  border: none;
+  font-weight: 700;
+  font-size: 15px;
+  cursor: pointer;
+  box-shadow: 0 20px 40px rgba(37, 99, 235, 0.35);
+  transition: transform var(--transition);
+}
+
+.cta-primary:hover {
+  transform: translateY(-3px);
+}
+
+.cta-card p {
+  position: relative;
+  margin-top: 20px;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 13px;
+}
+
+@media (max-width: 600px) {
+  .cta-card {
+    padding: 56px 24px;
+  }
+  .cta-card h2 {
+    font-size: 28px;
+  }
+}

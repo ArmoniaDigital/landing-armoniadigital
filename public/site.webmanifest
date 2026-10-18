@@ -1,0 +1,23 @@
+{
+  "name": "Armonía Digital",
+  "short_name": "Armonía",
+  "description": "Diseño de páginas web modernas para negocios locales.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#fffaf6",
+  "theme_color": "#ff5b00",
+  "lang": "es",
+  "icons": [
+    {
+      "src": "/web-app-manifest-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/web-app-manifest-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

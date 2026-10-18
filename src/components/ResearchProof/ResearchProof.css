@@ -1,0 +1,44 @@
+.research-proof {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 4px 16px;
+  align-items: center;
+  padding: 18px 0 0;
+  border-top: 1px solid rgba(17, 19, 24, 0.14);
+}
+
+.research-proof strong {
+  grid-row: span 2;
+  color: #eb600f;
+  font-family: var(--font-body);
+  font-size: clamp(34px, 3.2vw, 56px);
+  font-weight: 900;
+  line-height: 0.95;
+  letter-spacing: 0;
+}
+
+.research-proof p {
+  margin: 0;
+  color: #171a20;
+  font-size: 15.5px;
+  font-weight: 800;
+  line-height: 1.35;
+}
+
+.research-proof span {
+  color: #687080;
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+@media (max-width: 560px) {
+  .research-proof {
+    grid-template-columns: 1fr;
+    gap: 7px;
+  }
+
+  .research-proof strong {
+    grid-row: auto;
+  }
+}

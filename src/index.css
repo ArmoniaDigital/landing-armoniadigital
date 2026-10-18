@@ -1,0 +1,289 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Gothic&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+@import "./Styles/variables.css";
+@import "./Styles/base.css";
+@import "./Styles/buttons.css";
+@import "./Styles/utilities.css";
+
+@import "./components/Navbar/Navbar.css";
+@import "./components/Hero/Hero.css";
+@import "./components/ResearchProof/ResearchProof.css";
+@import "./components/Stats/Stats.css";
+@import "./components/Benefits/Benefits.css";
+@import "./components/pricing/Pricing.css";
+@import "./components/Portfolio/Portfolio.css";
+@import "./components/Extras/Extras.css";
+@import "./components/Preparation/Preparation.css";
+@import "./components/Testimonials/Testimonials.css";
+@import "./components/FAQ/FAQ.css";
+@import "./components/FinalStat/FinalStat.css";
+@import "./components/Blog/Blog.css";
+@import "./components/Welcome/Welcome.css";
+@import "./components/Appointment/Appointment.css";
+@import "./components/Checkout/Checkout.css";
+@import "./components/Onboarding/Onboarding.css";
+@import "./components/CTA/CTA.css";
+@import "./components/Footer/Footer.css";
+@import "./components/CookieConsent/CookieConsent.css";
+
+/* 2026 readability pass: keep display type, make body UI easier to scan. */
+:root {
+  --font-main: "Plus Jakarta Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-body: "Plus Jakarta Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --readable-text: #252b35;
+  --readable-muted: #4b5563;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.55;
+  color: var(--text);
+}
+
+p,
+li,
+a,
+button {
+  font-family: var(--font-body);
+}
+
+p {
+  color: var(--readable-muted);
+}
+
+.section-kicker,
+.pricing-kicker,
+.portfolio-kicker,
+.preparation-heading > span {
+  display: inline-flex;
+  margin-bottom: 14px;
+  color: #eb600f;
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.pricing-title {
+  font-size: clamp(53px, 4.55vw, 71px) !important;
+}
+
+.portfolio-title {
+  font-size: clamp(51px, 4.35vw, 71px) !important;
+}
+
+.pricing-card h3,
+.portfolio-card-copy h3 {
+  font-size: calc(clamp(58px, 4.8vw, 82px) - 3px) !important;
+}
+
+.plan-intro,
+.extra-copy p {
+  max-width: none;
+}
+
+.hero__description {
+  font-size: clamp(16px, 1.1vw, 19px);
+  line-height: 1.65;
+  color: var(--readable-text);
+}
+
+.btn,
+.whatsapp-btn,
+.plan-button,
+.portfolio-button,
+.portfolio-filters button,
+.preparation-cta a,
+.footer-whatsapp {
+  min-height: 54px;
+  font-family: var(--font-body);
+  font-size: 15.5px;
+  font-weight: 800;
+  letter-spacing: 0;
+}
+
+.portfolio-filters button {
+  min-height: 48px;
+  font-size: 14px;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+nav a {
+  font-size: 15.5px;
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+.stat-card p,
+.extra-copy p,
+.plan-intro,
+.pricing-card ul li,
+.testimonial-text,
+.footer-cta-copy p,
+.footer-cta-action p {
+  font-size: 15.5px;
+  line-height: 1.6;
+  color: var(--readable-text);
+}
+
+.extra-copy h3,
+.testimonial-user h4,
+.pricing-card h3,
+.portfolio-card-copy h3 {
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.25;
+  letter-spacing: 0;
+}
+
+.portfolio-card-copy span {
+  font-size: 15px;
+  line-height: 1.35;
+  color: var(--readable-muted);
+}
+
+.benefits-video > a,
+.hero__proofText span,
+.footer-links a,
+.footer-rights {
+  font-family: var(--font-body);
+  font-size: 14.5px;
+  line-height: 1.35;
+  letter-spacing: 0;
+}
+
+.hero__proofText strong {
+  font-size: 18px;
+  line-height: 1.2;
+}
+
+.price {
+  font-family: var(--font-body);
+  letter-spacing: -0.035em;
+}
+
+.popular-badge {
+  font-family: var(--font-body);
+  font-size: 12px;
+  letter-spacing: 0.02em;
+}
+
+.stat-card h3 {
+  font-size: 31px;
+}
+
+.stat-card p {
+  font-size: 14.5px;
+}
+
+.extra-card,
+.testimonial-card,
+.pricing-card {
+  border-color: rgba(16, 24, 40, 0.12);
+}
+
+.extra-card {
+  min-height: 126px;
+}
+
+.testimonial-card {
+  min-height: 190px;
+}
+
+.testimonial-user span {
+  font-size: 13.5px;
+  line-height: 1.35;
+}
+
+.faq-subtitle {
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--readable-text);
+}
+
+.footer-cta-copy p,
+.footer-cta-action p {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 16px;
+  }
+
+  .stat-card p,
+  .extra-copy p,
+  .plan-intro,
+  .pricing-card ul li,
+  .testimonial-text {
+    font-size: 15px;
+  }
+}
+
+.back-to-top {
+  position: fixed;
+  right: 28px;
+  bottom: 26px;
+  z-index: 2147483001;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 10px;
+  background: #ff5b00;
+  color: #ffffff;
+  box-shadow: 0 14px 30px rgba(255, 91, 0, 0.32);
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(16px);
+  transition: opacity 220ms ease, transform 220ms ease, visibility 220ms ease, background 220ms ease;
+}
+
+.back-to-top.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.back-to-top:hover {
+  background: #eb600f;
+  transform: translateY(-3px);
+}
+
+@media (max-width: 768px) {
+  .back-to-top {
+    right: 18px;
+    bottom: 18px;
+    width: 42px;
+    height: 42px;
+  }
+}
+
+.pricing-card h3 {
+  font-family: var(--font-display) !important;
+  font-size: clamp(58px, 4.8vw, 82px) !important;
+  font-weight: 400 !important;
+  line-height: 0.86 !important;
+  letter-spacing: 0.012em !important;
+  text-transform: uppercase !important;
+}
+
+.plan-button-buy {
+  background: #f47b32 !important;
+  color: #ffffff !important;
+}
+
+.plan-button-buy:hover {
+  background: #eb600f !important;
+}
+
+.featured-plan .plan-button-buy {
+  background: linear-gradient(135deg, #c20f2f 0%, #eb600f 100%) !important;
+}

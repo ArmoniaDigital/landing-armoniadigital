@@ -1,0 +1,223 @@
+.extras-section {
+  position: relative;
+  z-index: 1;
+  padding: 104px 0 112px;
+  background: #fbf8f3;
+  border-top: 1px solid rgba(15, 23, 42, 0.08);
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+.extras-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 34px;
+  align-items: start;
+}
+
+.extras-heading {
+  padding-top: 9px;
+  max-width: 1040px;
+}
+
+.extras-title {
+  max-width: 900px;
+  margin: 0;
+  color: #111318;
+  font-family: var(--font-display) !important;
+  font-size: clamp(54px, 4.55vw, 74px);
+  font-weight: 400;
+  line-height: 0.9;
+  letter-spacing: 0.012em;
+  text-transform: uppercase;
+  text-align: left;
+}
+
+.extras-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.extra-card {
+  min-height: 118px;
+  display: grid;
+  grid-template-columns: 46px 1fr;
+  align-items: center;
+  gap: 18px;
+  padding: 23px 21px;
+  background: rgba(255, 255, 255, 0.76);
+  border: 1px solid rgba(16, 24, 40, 0.11);
+  border-radius: 10px;
+  box-shadow: 0 10px 32px rgba(17, 19, 24, 0.035);
+  transition: transform 240ms ease, box-shadow 240ms ease, border-color 240ms ease;
+}
+
+.extra-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(235, 96, 15, 0.28);
+  box-shadow: 0 18px 46px rgba(17, 19, 24, 0.07);
+}
+
+.extra-icon {
+  width: 46px;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #eb600f;
+  flex-shrink: 0;
+}
+
+.extra-copy h3 {
+  margin: 0 0 7px;
+  color: #15171c;
+  font-family: var(--font-body);
+  font-size: 15.5px;
+  font-weight: 900;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  text-transform: none;
+}
+
+.extra-copy p {
+  max-width: 260px;
+  margin: 0;
+  color: #3f4248;
+  font-size: 14px;
+  font-weight: 560;
+  line-height: 1.48;
+  letter-spacing: -0.01em;
+}
+
+.extras-cta {
+  width: 100%;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 24px;
+  margin-top: 8px;
+  padding: 24px;
+  border: 1px solid rgba(235, 96, 15, 0.16);
+  border-radius: 16px;
+  background:
+    radial-gradient(circle at 8% 10%, rgba(235, 96, 15, 0.13), transparent 32%),
+    rgba(255, 255, 255, 0.78);
+  box-shadow: 0 18px 48px rgba(17, 19, 24, 0.06);
+}
+
+.extras-cta span {
+  display: block;
+  color: #111318;
+  font-size: 21px;
+  font-weight: 900;
+  line-height: 1.2;
+}
+
+.extras-cta p {
+  max-width: 620px;
+  margin: 7px 0 0;
+  color: #4b5563;
+  font-size: 15px;
+  font-weight: 650;
+  line-height: 1.5;
+}
+
+.extras-cta-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.extras-cta-primary,
+.extras-cta-secondary {
+  min-height: 54px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 0 22px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 900;
+  text-decoration: none;
+  transition: transform 220ms ease, background 220ms ease, border-color 220ms ease;
+}
+
+.extras-cta-primary {
+  border: 1px solid #eb600f;
+  background: #eb600f;
+  color: #ffffff;
+  box-shadow: 0 16px 34px rgba(235, 96, 15, 0.22);
+}
+
+.extras-cta-secondary {
+  border: 1px solid rgba(235, 96, 15, 0.42);
+  background: #ffffff;
+  color: #eb600f;
+}
+
+.extras-cta-primary:hover,
+.extras-cta-secondary:hover {
+  transform: translateY(-2px);
+}
+
+.extras-cta-secondary:hover {
+  background: rgba(235, 96, 15, 0.08);
+  border-color: rgba(235, 96, 15, 0.72);
+}
+
+@media (max-width: 1180px) {
+  .extras-wrapper {
+    gap: 34px;
+  }
+
+  .extras-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 820px) {
+  .extras-section {
+    padding: 86px 0 92px;
+  }
+
+  .extras-wrapper {
+    gap: 34px;
+  }
+
+  .extras-title {
+    max-width: 430px;
+    text-align: left;
+  }
+
+  .extras-cta {
+    grid-template-columns: 1fr;
+  }
+
+  .extras-cta-actions {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 560px) {
+  .extras-section {
+    padding: 76px 0 82px;
+  }
+
+  .extras-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .extra-card {
+    min-height: 108px;
+    padding: 21px 19px;
+  }
+
+  .extras-cta-primary,
+  .extras-cta-secondary {
+    width: 100%;
+  }
+}

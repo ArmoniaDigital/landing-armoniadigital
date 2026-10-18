@@ -1,0 +1,114 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Gothic&family=Inter:wght@300;400;500;600;700;800&display=swap");
+/* ===========================
+   ARMONÍA DIGITAL - DESIGN SYSTEM
+   Sprint 1: Foundations
+=========================== */
+
+:root {
+  /* =========================
+     COLOR SYSTEM
+  ========================= */
+
+  --bg: #f7f8fc;            /* base background */
+  --bg-soft: #f1f4f9;       /* sections subtle */
+  --surface: #ffffff;       /* cards */
+  --surface-glass: rgba(255, 255, 255, 0.7);
+
+  --text: #0b0f19;          /* primary text */
+  --text-muted: #5b6475;    /* secondary text */
+  --text-soft: #8b93a7;     /* tertiary */
+
+  --primary: #EB600F;       /* modern blue */
+  --primary-dark: #EB600F;
+  --primary-soft: rgba(47, 107, 255, 0.12);
+  --gradient-primary: linear-gradient(135deg, #EB600F 0%, #EB600F 100%);
+  --text-light: #5b6475;
+  --transition: 280ms cubic-bezier(0.16, 1, 0.3, 1);
+
+  --border: rgba(15, 23, 42, 0.08);
+  --border-strong: rgba(15, 23, 42, 0.14);
+
+  /* =========================
+     TYPOGRAPHY
+  ========================= */
+
+  --font-main: "Inter", system-ui, -apple-system, sans-serif;
+
+  --h1: 72px;
+  --h2: 48px;
+  --h3: 32px;
+  --h4: 24px;
+
+  --text-lg: 18px;
+  --text-md: 16px;
+  --text-sm: 14px;
+  --text-xs: 12px;
+
+  --lh-tight: 1.05;
+  --lh-normal: 1.4;
+  --lh-relaxed: 1.6;
+
+  /* =========================
+     SPACING SYSTEM (8pt grid)
+  ========================= */
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+  --space-10: 128px;
+
+  /* =========================
+     RADIUS
+  ========================= */
+
+  --radius-sm: 12px;
+  --radius-md: 18px;
+  --radius-lg: 24px;
+  --radius-xl: 28px;
+  --radius-pill: 999px;
+
+  /* =========================
+     SHADOWS (soft premium)
+  ========================= */
+
+  --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.08);
+
+  --shadow-glow: 0 0 0 1px rgba(47, 107, 255, 0.12),
+                 0 20px 60px rgba(47, 107, 255, 0.12);
+
+  /* =========================
+     TRANSITIONS
+  ========================= */
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.83, 0, 0.17, 1);
+
+  --t-fast: 180ms;
+  --t-medium: 280ms;
+  --t-slow: 420ms;
+
+  /* =========================
+     LAYOUT
+  ========================= */
+
+  --page-max: 1320px;
+  --container: var(--page-max);
+  --container-wide: var(--page-max);
+
+  /* =========================
+     Z-INDEX
+  ========================= */
+
+  --z-base: 1;
+  --z-nav: 100;
+  --z-modal: 1000;
+  --z-toast: 2000;
+}

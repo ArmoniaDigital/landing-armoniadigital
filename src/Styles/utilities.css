@@ -1,0 +1,104 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Gothic&family=Inter:wght@300;400;500;600;700;800&display=swap");
+/* ===========================
+   UTILITIES - PREMIUM UI HELPERS
+=========================== */
+
+/* =========================
+   FLEX
+========================= */
+
+.flex {
+  display: flex;
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* =========================
+   TEXT
+========================= */
+
+.text-center {
+  text-align: center;
+}
+
+.text-muted {
+  color: var(--text-muted);
+}
+
+.text-primary {
+  color: var(--primary);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, var(--primary), #EB600F);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* =========================
+   GLASS EFFECT (VERY SUBTLE)
+========================= */
+
+.glass {
+  background: var(--surface-glass);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+}
+
+/* =========================
+   CARD BASE
+========================= */
+
+.card {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+}
+
+/* =========================
+   PREMIUM HOVER
+========================= */
+
+.hover-lift {
+  transition: transform var(--t-medium) var(--ease-out),
+              box-shadow var(--t-medium) var(--ease-out);
+}
+
+.hover-lift:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+}
+
+/* =========================
+   SPACING HELPERS
+========================= */
+
+.mt-1 { margin-top: var(--space-1); }
+.mt-2 { margin-top: var(--space-2); }
+.mt-3 { margin-top: var(--space-3); }
+.mt-4 { margin-top: var(--space-4); }
+.mt-5 { margin-top: var(--space-5); }
+.mt-6 { margin-top: var(--space-6); }
+.mt-7 { margin-top: var(--space-7); }
+.mt-8 { margin-top: var(--space-8); }
+
+/* =========================
+   BUTTON RESET (foundation)
+========================= */
+
+button {
+  font-family: inherit;
+  border: none;
+  cursor: pointer;
+}

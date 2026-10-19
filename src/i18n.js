@@ -60,7 +60,7 @@ export const locales = {
       subtitle: "Elige el punto de partida que mejor encaje contigo. Si no estás seguro, te ayudamos a decidir en una llamada gratis.",
       popular: "MÁS ELEGIDO",
       schedule: "Agendar llamada",
-      buy: "Comprar",
+      buy: "Solicitar servicio",
       plans: [
         {
           name: "Launch",

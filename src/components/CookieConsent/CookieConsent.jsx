@@ -1,18 +1,21 @@
 import { ShieldCheck, X } from "lucide-react";
 import { useEffect, useState } from "react";
-
-const STORAGE_KEY = "armonia-cookie-consent";
+import { analytics } from "../../services/analytics.js";
+import { OPEN_CONSENT_EVENT } from "../../services/analytics.mjs";
 
 export default function CookieConsent() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    const storedConsent = window.localStorage.getItem(STORAGE_KEY);
-    setVisible(!storedConsent);
+    setVisible(!analytics.getConsent());
+    const open = () => setVisible(true);
+    window.addEventListener(OPEN_CONSENT_EVENT, open);
+    const unsubscribe = analytics.subscribe(() => setVisible(false));
+    return () => { window.removeEventListener(OPEN_CONSENT_EVENT, open); unsubscribe(); };
   }, []);
 
   const saveConsent = (value) => {
-    window.localStorage.setItem(STORAGE_KEY, value);
+    analytics.setConsent(value);
     setVisible(false);
   };
 
@@ -27,7 +30,7 @@ export default function CookieConsent() {
       <div className="cookie-consent__copy">
         <strong>Usamos cookies para mejorar tu experiencia.</strong>
         <p>
-          Guardamos cookies necesarias y de medición para entender cómo se usa esta web y mejorar nuestros servicios.
+          Las cookies opcionales de medición y publicidad nos ayudan a mejorar la web y nuestras campañas.
           Puedes aceptar o rechazar su uso. Consulta nuestra{" "}
           <a href="#politica-privacidad">política de privacidad</a>.
         </p>

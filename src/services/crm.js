@@ -1,4 +1,7 @@
+import { analytics } from "./analytics.js";
+
 function readCookie(name) {
+  if (analytics.getConsent() !== "accepted") return "";
   return document.cookie
     .split("; ")
     .find((row) => row.startsWith(`${name}=`))
@@ -9,6 +12,7 @@ function readCookie(name) {
 
 function browserEventMeta(eventName) {
   const eventId = `${eventName}_${Date.now()}_${Math.random().toString(16).slice(2)}`;
+  if (analytics.getConsent() !== "accepted") return { eventId };
   const url = new URL(window.location.href);
   const fbclid = url.searchParams.get("fbclid") || "";
 
@@ -22,37 +26,7 @@ function browserEventMeta(eventName) {
 }
 
 export async function sendMetaEvent(eventName, payload = {}) {
-  const eventEndpoint = import.meta.env.VITE_CRM_WEBHOOK_URL;
-  const token = import.meta.env.VITE_CRM_WEBHOOK_TOKEN;
-
-  if (!eventEndpoint) {
-    return { skipped: true, reason: "missing_endpoint" };
-  }
-
-  const endpoint = eventEndpoint.replace(/\/landing\/events\/?$/, "/landing/meta-event");
-  const headers = { "Content-Type": "application/json" };
-
-  if (token) {
-    headers.Authorization = `Bearer ${token}`;
-  }
-
-  const response = await fetch(endpoint, {
-    method: "POST",
-    headers,
-    body: JSON.stringify({
-      event: eventName,
-      source: payload.source || eventName,
-      createdAt: payload.createdAt || new Date().toISOString(),
-      browser: browserEventMeta(eventName),
-      ...payload,
-    }),
-  });
-
-  if (!response.ok) {
-    throw new Error(`Meta event request failed with status ${response.status}`);
-  }
-
-  return response.json().catch(() => ({ ok: true }));
+  return analytics.track(eventName, payload);
 }
 
 export async function sendCrmEvent(eventName, payload, endpointOverride) {
@@ -66,8 +40,6 @@ export async function sendCrmEvent(eventName, payload, endpointOverride) {
     browser: browserEventMeta(eventName),
     ...payload,
   };
-
-  localStorage.setItem(`armonia_latest_${eventName}`, JSON.stringify(eventPayload));
 
   if (!endpoint) {
     return { skipped: true, reason: "missing_endpoint", payload: eventPayload };

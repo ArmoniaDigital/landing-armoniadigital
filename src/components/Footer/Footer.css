@@ -196,3 +196,18 @@
     justify-content: center;
   }
 }
+.footer-cookie-settings {
+  border: 0;
+  padding: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.footer-cookie-settings:focus-visible {
+  outline: 2px solid #ff5b00;
+  outline-offset: 4px;
+}

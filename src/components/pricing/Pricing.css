@@ -175,8 +175,7 @@
 }
 
 .price {
-  /* Precios ocultos temporalmente (2026-09-17). Revertir: quitar display:none */
-  display: none;
+  display: flex;
   align-items: baseline;
   gap: 8px;
   margin: 18px 0 14px;
@@ -185,7 +184,7 @@
   font-size: 44px;
   line-height: 0.92;
   font-weight: 900;
-  letter-spacing: -0.04em;
+  letter-spacing: 0;
 }
 
 .price small {
@@ -267,15 +266,6 @@
 
 .plan-button-call:hover {
   background: rgba(235, 96, 15, 0.07);
-}
-
-/* Botones de comprar ocultos temporalmente */
-.plan-button-buy {
-  display: none !important;
-}
-
-.featured-plan .plan-button-buy {
-  display: none !important;
 }
 
 .plan-button-buy:hover {

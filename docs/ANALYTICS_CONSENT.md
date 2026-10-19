@@ -19,19 +19,24 @@ ni Lead por un click. No guarda PII del formulario en localStorage.
 VITE_META_CONVERSIONS_URL es PUBLICA y solo admite el endpoint HTTPS
 https://crm-readyin72.vercel.app/api/landing/meta-event. No poner claves en ella.
 Mientras falte no se llama al endpoint Laravel retirado ni se afirma envio API.
-La API de Conversiones continua pendiente; el Pixel de navegador es independiente.
+Backend final de OpenCode integrado en el CRM (a905e4b), con 35 pruebas y SQL
+remoto verificados; se comprueba publicacion por separado. La variable publica
+sigue sin activar hasta cerrar la prueba real; el Pixel de navegador es independiente.
 
 Contrato para OpenCode: POST application/json sin Authorization ni cookies.
 {event, consent:true, source?, content_name?, content_category?, selectedPlan?,
  browser:{eventId,eventSourceUrl,fbp,fbc}}.
 URL sin query/hash; sin IP/user-agent aportados por el body, ni contacto/credenciales.
 Respuesta necesaria para confirmar el servidor: {ok:true,eventsReceived:1}.
-Timeout 5 segundos; rechazo, fallo o respuesta incompleta => unconfirmed,
+Timeout 10 segundos, dando margen a Graph (5 s) y operaciones SQL del servidor.
+Metadatos publicos acotados a los mismos limites del backend antes de enviar
+a Pixel/Graph: source 60, content_name/category 100, selectedPlan 80.
+Rechazo, fallo o respuesta incompleta => unconfirmed,
 sin afectar formulario ni cambiar el ID por un reintento automatico.
 
 ## Evidencia y limites
 
-13 pruebas aprobadas (10 de consentimiento y 3 del emisor comercial), build Vite
+14 pruebas aprobadas (11 de consentimiento y 3 del emisor comercial), build Vite
 aprobado. No se hicieron envios de prueba reales a Meta ni se usaron secretos.
 Falta validar con navegador real los eventos en Events Manager, asi como las
 etiquetas internas del contenedor GTM: otro tag configurado alli podria duplicar

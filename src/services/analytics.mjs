@@ -83,8 +83,8 @@ export function createAnalytics({ win, doc, metaEndpoint = "", fetcher = globalT
     initialize();
     if (!PUBLIC_EVENTS.has(event)) return { skipped: true, reason: "unsupported_event" };
     const custom = {};
-    for (const key of ["source", "content_name", "content_category", "selectedPlan"]) {
-      if (typeof payload[key] === "string") custom[key] = payload[key].replace(/[\u0000-\u001f\u007f]/g, "").slice(0, 160);
+    for (const [key, limit] of Object.entries({ source: 60, content_name: 100, content_category: 100, selectedPlan: 80 })) {
+      if (typeof payload[key] === "string") custom[key] = payload[key].replace(/[\u0000-\u001f\u007f]/g, "").normalize("NFC").trim().slice(0, limit);
     }
     if (event === "PageView") pendingView = custom;
     if (consent !== "accepted") return { skipped: true, reason: "consent_required" };
@@ -99,7 +99,7 @@ export function createAnalytics({ win, doc, metaEndpoint = "", fetcher = globalT
       if (target.protocol !== "https:" || target.origin !== "https://crm-readyin72.vercel.app" || target.pathname !== "/api/landing/meta-event" || target.search || target.hash || target.username || target.password) throw new Error("invalid endpoint");
       const response = await fetcher(target.href, {
         method: "POST", credentials: "omit", headers: { "Content-Type": "application/json" },
-        signal: AbortSignal.timeout(5000),
+        signal: AbortSignal.timeout(10000),
         body: JSON.stringify({ event, consent: true, ...custom, browser: {
           eventId, eventSourceUrl: `${win.location.origin}${win.location.pathname}`,
           fbp: cookie("_fbp"), fbc: cookie("_fbc"),

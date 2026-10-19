@@ -70,6 +70,15 @@ test("forged purchases and business milestones cannot be emitted by the browser 
   assert.equal(s.win.fbq.queue.filter((args) => args[0] === "trackSingle").length, 0);
 });
 
+test("public metadata fits backend limits identically in Pixel and Graph",async()=>{
+  const s=setup({stored:"accepted",endpoint});
+  await s.analytics.track("ViewContent",{source:"s".repeat(90),content_name:"n".repeat(170),content_category:"c".repeat(170),selectedPlan:"p".repeat(100)});
+  const sent=JSON.parse(s.requests[0].body),pixel=s.win.fbq.queue.at(-1)[3];
+  for(const [key,length] of Object.entries({source:60,content_name:100,content_category:100,selectedPlan:80})){
+    assert.equal(sent[key].length,length);assert.equal(sent[key],pixel[key]);
+  }
+});
+
 test("revocation stops later events and clears known marketing cookies without reinjecting trackers", async () => {
   const s = setup({ stored: "accepted", endpoint });
   await s.analytics.track("Contact");

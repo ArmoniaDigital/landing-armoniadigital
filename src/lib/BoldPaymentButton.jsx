@@ -99,6 +99,12 @@ export default function BoldPaymentButton({
     }
 
     if (amountInteger <= 0) {
+      setStatus("error");
+      setError("Monto inválido.");
+      return () => {
+        cancelled = true;
+      };
+    }
 
     setStatus("preparing");
     setError("");

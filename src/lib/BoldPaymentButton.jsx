@@ -128,7 +128,14 @@ export default function BoldPaymentButton({
     return () => {
       cancelled = true;
     };
-  }, [amountInteger, currency, description, endpoint, orderId, renderMode]);
+  }, [
+    amountInteger,
+    currency,
+    description,
+    endpoint,
+    orderId,
+    renderMode
+  ]);
 
   useEffect(() => {
     if (!onCheckoutEvent) return undefined;

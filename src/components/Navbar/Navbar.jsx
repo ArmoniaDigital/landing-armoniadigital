@@ -3,13 +3,13 @@ import { useEffect, useRef, useState } from "react";
 import logo from "./LOGO-01.png";
 
 const hrefs = [
-  "#inicio",
+  "/",
   "#precios",
   "#portafolio",
   "#extras",
   "#testimonios",
   "#faq",
-  "#blog",
+  "/blog",
   "#contacto",
 ];
 

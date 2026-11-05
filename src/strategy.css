@@ -1,0 +1,128 @@
+/* Scoped campaign treatment: brand typography, one action, compositor-only motion. */
+.strategy {
+  --campaign-panel: #12161b;
+  --campaign-border: #dce0e4;
+  --campaign-muted: #525a65;
+  background: var(--surface);
+  letter-spacing: 0;
+}
+.strategy *, .strategy *::before, .strategy *::after { letter-spacing: 0; }
+.strategy .vsl-header { position: relative; background: var(--surface); backdrop-filter: none; }
+.strategy .vsl-header-inner { min-height: 76px; }
+.strategy .vsl-brand img { width: 150px; height: 50px; object-fit: contain; }
+.strategy .vsl-button { min-height: 48px; padding: 12px 22px; border-radius: 8px; }
+.strategy .vsl-button-primary { background: var(--primary-dark); box-shadow: none; }
+.strategy .vsl-button-primary:hover { background: var(--ink-800); box-shadow: var(--shadow-sm); }
+.strategy .vsl-button-ghost { backdrop-filter: none; box-shadow: none; border-color: var(--campaign-border); }
+.strategy .vsl-kicker { color: var(--primary-dark); font-size: 12px; line-height: 1.6; }
+.strategy-hero { position: relative; max-width: 940px; padding-top: 26px; padding-bottom: 32px; }
+.strategy h1 { font-size: 60px; line-height: 1; max-width: 740px; margin: 14px auto 18px; animation: title-arrive 650ms var(--ease-out) both; }
+.strategy h1 span { position: relative; display: inline-block; color: var(--primary-dark); }
+.strategy h1 span::after { content: ""; position: absolute; left: 0; right: 0; bottom: -5px; height: 3px; background: var(--primary); transform-origin: left; animation: accent-draw 850ms var(--ease-out) both; }
+.strategy-intro { font-size: 16px; line-height: 1.65; max-width: 650px; margin-bottom: 24px; color: var(--campaign-muted); }
+.strategy .vsl-video, .strategy-video-unavailable { position: relative; width: min(100%, 760px); margin-inline: auto; aspect-ratio: 16 / 9; overflow: hidden; border-radius: 8px; border: 1px solid var(--campaign-border); box-shadow: 0 16px 36px rgba(17, 19, 24, .08); }
+.strategy-video-unavailable { background: var(--campaign-panel); color: var(--surface); gap: 8px; }
+.strategy-video-unavailable img { width: 176px; height: 62px; object-fit: contain; background: var(--surface); padding: 12px; border-radius: 4px; }
+.strategy-video-unavailable p { font-size: 16px; }
+.strategy-video-unavailable span { color: var(--white-strong); max-width: 320px; }
+.strategy-video-unavailable::after { content: ""; position: absolute; inset: 0 auto auto 0; width: 100%; height: 3px; background: var(--primary); transform-origin: left; animation: accent-draw 950ms var(--ease-out) both; }
+.strategy-caption { font-size: 12px; margin: 14px auto; max-width: 650px; }
+.strategy-action { margin-top: 18px; }
+.strategy-preview-tools { margin-top: 20px; padding-top: 16px; border-top: 1px dashed var(--campaign-border); }
+.strategy-action .vsl-button { min-width: 240px; }
+.strategy-action p { margin: 10px 0 0; }
+.strategy-band { background: var(--ink-800); color: var(--surface); padding: 56px 0; }
+.strategy-band .vsl-kicker, .strategy-band svg { color: var(--brand-300); }
+.strategy .strategy-band h2 { color: var(--surface); }
+.strategy h2 { font-size: 40px; }
+.strategy-session { padding-block: 56px; }
+.strategy-session > p:not(.vsl-kicker) { color: var(--campaign-muted); }
+.strategy-reveal { animation: section-arrive 650ms var(--ease-out) both; }
+.strategy-list li { animation: section-arrive 650ms var(--ease-out) both; }
+.strategy-list li:nth-child(2) { animation-delay: 80ms; }
+.strategy-list li:nth-child(3) { animation-delay: 160ms; }
+.strategy details { border-color: var(--campaign-border); }
+.strategy details[open] p { animation: section-arrive 250ms ease-out; }
+.strategy summary { min-height: 24px; padding-block: 8px; }
+.strategy .vsl-footer { background: var(--surface); border-top: 1px solid var(--campaign-border); padding: 24px 0; color: var(--campaign-muted); }
+.strategy :focus-visible { outline: 3px solid var(--primary-dark); outline-offset: 5px; }
+.strategy-skip { position: fixed; top: 8px; left: 16px; z-index: 100; padding: 12px; background: var(--surface); color: var(--ink-800); transform: translateY(-180%); }
+.strategy-skip:focus { transform: translateY(0); }
+.strategy-loading { position: fixed; inset: auto 16px 24px; z-index: 100; padding: 16px; background: var(--ink-800); color: var(--surface); text-align: center; border-radius: 8px; }
+
+/* Premium VSL: the film owns the first viewport; no navigation bar. */
+.strategy-premium { --campaign-panel: #151716; --campaign-quiet: #b5b7b4; }
+.strategy-premium .strategy-hero { max-width: 1140px; padding-top: 20px; padding-bottom: 32px; }
+.strategy-signature { display: inline-flex; margin-bottom: 16px; }
+.strategy-signature img { width: 132px; height: 44px; object-fit: contain; }
+.strategy-premium .vsl-kicker { margin: 0; color: var(--campaign-muted); font-size: 11px; }
+.strategy-premium h1 { max-width: 900px; margin: 10px auto 18px; font-size: 80px; line-height: .94; animation: none; }
+.strategy-premium h1 span { color: inherit; }
+.strategy-premium h1 span::after { display: none; }
+.strategy-premium .strategy-title-mask { display: block; overflow: hidden; padding-bottom: 3px; }
+.strategy-premium .strategy-title-line { display: block; }
+.strategy-premium .strategy-title-mask:last-child { color: var(--primary-dark); }
+.strategy-premium .strategy-intro { font-size: 15px; line-height: 1.6; margin-bottom: 24px; }
+.strategy-video-stage { max-width: 1000px; margin-inline: auto; }
+.strategy-premium .vsl-video, .strategy-premium .strategy-video-unavailable { width: 100%; aspect-ratio: 16 / 8; border: 0; border-radius: 4px; box-shadow: none; }
+.strategy-premium .strategy-video-unavailable { display: flex; align-items: stretch; justify-content: space-between; text-align: left; padding: 28px 36px; background: var(--campaign-panel); }
+.strategy-premium .strategy-video-unavailable::after { display: none; }
+.strategy-film-top, .strategy-film-bottom { display: flex; justify-content: space-between; align-items: center; gap: 20px; }
+.strategy-film-top { padding-bottom: 16px; border-bottom: 1px solid var(--line-on-dark-strong); }
+.strategy-premium .strategy-film-top span { font-size: 11px; color: var(--campaign-quiet); }
+.strategy-film-title { font: 400 76px/.98 var(--font-display); text-transform: uppercase; color: var(--surface); }
+.strategy-film-title em { font-style: normal; color: var(--brand-300); }
+.strategy-film-bottom { padding-top: 16px; border-top: 1px solid var(--line-on-dark-strong); }
+.strategy-premium .strategy-film-bottom p { color: var(--surface); font-size: 12px; font-weight: 500; margin: 0; }
+.strategy-premium .strategy-film-bottom span { color: var(--campaign-quiet); font-size: 11px; }
+.strategy-video-foot { display: flex; justify-content: space-between; gap: 16px; padding: 12px 0; border-bottom: 1px solid var(--campaign-border); font-size: 11px; color: var(--campaign-muted); }
+.strategy-premium .strategy-action { margin-top: 22px; }
+.strategy-premium .vsl-button-primary { min-height: 52px; border-radius: 4px; }
+.strategy-premium .strategy-preview-tools { border: 0; margin-top: 10px; padding-top: 0; }
+.strategy-premium .strategy-preview-tools .vsl-button { min-height: 36px; font-size: 11px; padding: 8px 12px; border: 0; box-shadow: none; text-decoration: underline; text-underline-offset: 4px; }
+.strategy-premium .strategy-band { background: var(--campaign-panel); }
+.strategy-premium .strategy-list li { animation: none; }
+.strategy-premium .strategy-session { max-width: 900px; }
+.strategy-premium .strategy-session h2 { font-size: 52px; max-width: 700px; }
+@media (min-width: 1400px) and (min-height: 1000px) {
+  .strategy-premium .strategy-hero { padding-top: 28px; }
+  .strategy-premium h1 { font-size: 96px; }
+}
+@media (max-width: 600px) {
+  .strategy-premium .strategy-hero { padding-top: 18px; }
+  .strategy-signature { margin-bottom: 14px; }
+  .strategy-signature img { width: 112px; height: 36px; }
+  .strategy-premium h1 { font-size: 48px; margin: 10px auto 14px; line-height: 1; }
+  .strategy-premium .strategy-intro { font-size: 14px; margin-bottom: 20px; }
+  .strategy-desktop-break { display: none; }
+  .strategy-premium .strategy-video-unavailable, .strategy-premium .vsl-video { aspect-ratio: 4 / 3; min-height: 0; }
+  .strategy-premium .strategy-video-unavailable { padding: 18px; }
+  .strategy-premium .strategy-film-top span { font-size: 9px; }
+  .strategy-film-title { font-size: 42px; }
+  .strategy-film-bottom { gap: 6px; align-items: flex-start; flex-direction: column; }
+  .strategy-premium .strategy-film-bottom p, .strategy-premium .strategy-film-bottom span { font-size: 10px; }
+  .strategy-video-foot { font-size: 9px; gap: 8px; }
+  .strategy-premium .strategy-session h2 { font-size: 36px; }
+}
+@keyframes title-arrive { from { transform: translateY(14px); } to { transform: translateY(0); } }
+@keyframes accent-draw { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+@keyframes section-arrive { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+@media (hover: hover) { .strategy .vsl-brand { transition: transform 220ms ease; } .strategy .vsl-brand:hover { transform: translateY(-2px); } }
+@media (max-width: 600px) {
+  .strategy .vsl-header-inner { min-height: 68px; gap: 8px; }
+  .strategy .vsl-brand img { width: 112px; height: 38px; }
+  .strategy .vsl-header .vsl-button { font-size: 12px; padding: 10px; gap: 6px; }
+  .strategy-hero { padding-top: 24px; }
+  .strategy h1 { font-size: 42px; line-height: 1.06; }
+  .strategy h2 { font-size: 32px; }
+  .strategy-intro { font-size: 15px; }
+  .strategy-video-unavailable { min-height: 215px; padding: 20px; }
+  .strategy-video-unavailable img { width: 145px; height: 50px; }
+  .strategy-video-unavailable p { font-size: 14px; }
+  .strategy-video-unavailable span { font-size: 12px; }
+  .strategy .vsl-button { max-width: 100%; }
+  .strategy .vsl-container { width: calc(100% - 32px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .strategy *, .strategy *::before, .strategy *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}

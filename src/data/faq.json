@@ -1,0 +1,55 @@
+{
+  "kicker": "FAQ",
+  "title": "Preguntas frecuentes.",
+  "subtitle": "Todo lo que necesitas saber antes de empezar.",
+  "items": [
+    [
+      "¿Necesito tener experiencia o saber de tecnología?",
+      "No. Entregamos una solución lista para usar y podemos capacitarte para realizar cambios básicos."
+    ],
+    [
+      "¿Qué necesito enviar antes de empezar?",
+      "Después de comprar tu página web, recibirás correos automáticos con el enlace a un formulario donde podrás compartir todos los detalles de tu empresa. Luego tendremos una llamada de 15 minutos para revisar la información y asegurarnos de haber entendido todo correctamente."
+    ],
+    [
+      "¿Qué pasa exactamente durante las primeras 72 horas?",
+      "Recibes una dirección real del sitio web para revisar. La idea es crear impulso rápido y luego refinar los detalles antes del lanzamiento."
+    ],
+    [
+      "¿Cuándo empiezan a contar las 72 horas?",
+      "El plazo de 72 horas hábiles empieza cuando completas el formulario de onboarding y tenemos todos los detalles de la empresa necesarios para trabajar en el proyecto."
+    ],
+    [
+      "¿Es solo una plantilla con mi nombre?",
+      "No. Las plantillas y referencias nos ayudan a acelerar el proceso. Tomamos algunos puntos de partida visuales y estratégicos, y con eso construimos tu sitio web alrededor de tu negocio, tu mensaje y lo que necesitas comunicar."
+    ],
+    [
+      "¿Puedo pedir ajustes después del primer adelanto?",
+      "Sí. El primer adelanto está pensado para iniciar una conversación clara. Puedes señalar qué se siente bien, qué necesita ajustes y qué debe verse más preciso antes de publicar el sitio."
+    ],
+    [
+      "¿Me orientan con dominio, hosting y revisiones de lanzamiento?",
+      "Sí. Nuestro equipo puede sugerirte opciones de dominios disponibles para que elijas el que prefieras comprar. También podemos ayudarte a conectar el dominio, preparar el hosting, revisar la versión móvil, comprobar aspectos básicos de velocidad y dejar cubiertos los detalles importantes del lanzamiento."
+    ],
+    [
+      "¿El dominio viene incluido en el precio de la web?",
+      "Te acompañamos para que esa decisión sea fácil: te sugerimos dominios disponibles, tú eliges cuál comprar y, si ya tienes uno, podemos ayudarte a conectarlo con tu nuevo sitio."
+    ],
+    [
+      "¿Qué pasa si necesito más que una landing page?",
+      "Está bien. Podemos construir un sitio corporativo más completo, páginas de servicios, bases de ecommerce, flujos de reservas o un plan de lanzamiento por fases según lo que tu negocio necesite primero."
+    ],
+    [
+      "¿Qué no está incluido en el precio de la web?",
+      "Los costos de terceros se gestionan por separado: registro de dominio, renovaciones de hosting, fuentes premium o bancos de imágenes, comisiones de pasarelas de pago, suscripciones de apps, bandejas de correo y cargos de plataformas externas. Podemos ayudarte a elegir y conectar esas herramientas, pero cada proveedor factura aparte."
+    ],
+    [
+      "¿Es un pago único o varios pagos?",
+      "La construcción de la web puede manejarse como un proyecto de pago único."
+    ],
+    [
+      "¿Mi página aparecerá en Google?",
+      "Sí. Todas nuestras páginas incluyen optimización SEO básica para facilitar su indexación."
+    ]
+  ]
+}

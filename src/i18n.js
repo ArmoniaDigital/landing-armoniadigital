@@ -216,7 +216,7 @@ export const locales = {
       projects: [
         ["Aurinel Martinez", "Marca Personal", "VE", "aurinelmartinez.com"],
         ["Starsoul", "E-Commerce", "CO", "www.starsoul.com.co"],
-        ["La Sele Store", ["E-Commerce", "Deportes"], "CO", "la-sele-store-10.myshopify.com"],
+        ["La Sele Store", ["E-Commerce", "Deportes"], "CO", "lasele.shop"],
         ["PG Excellence", "E-Commerce", "US", "pg-excellence.com"],
         ["Oniria Propiedades", ["Real Estate", "Sistemas a Medida"], "CL", "www.oniriapropiedades.cl"],
         ["Casabueno", "Suministros", "AR", "casabueno.com.ar"],
@@ -335,6 +335,29 @@ export const locales = {
       tagline: "Diseño estratégico · Desarrollo profesional · Resultados reales",
       rights: "© 2026 Armonía Digital. Todos los derechos reservados.",
       links: ["Precios", "FAQ", "Blog", "Privacidad"],
+    },
+    vsl: {
+      kicker: "Video Sales Letter",
+      title: "Tu negocio crecerá con una web profesional",
+      text: "Diseñamos páginas web modernas, rápidas y optimizadas para conversión. En este video verás cómo trabajamos y los planes disponibles.",
+      callToAction: "Agendar llamada",
+      plans: [
+        {
+          name: "Launch",
+          price: "$399",
+          description: "Ideal para empezar con presencia online.",
+        },
+        {
+          name: "Business",
+          price: "$699",
+          description: "Perfecto para negocios que quieren crecer.",
+        },
+        {
+          name: "Store",
+          price: "$999",
+          description: "Para negocios que quieren posicionarse como líderes.",
+        },
+      ],
     },
   },
 };

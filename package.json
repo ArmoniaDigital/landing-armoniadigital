@@ -1,5 +1,5 @@
 {
-  "name": "armonia-digital",
+  "name": "armonia-vsl",
   "private": true,
   "version": "1.0.0",
   "type": "module",
@@ -9,10 +9,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "framer-motion": "^14.9.0",
+    "gsap": "^3.15.0",
+    "lucide-react": "^0.454.0",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "framer-motion": "^11.11.17",
-    "lucide-react": "^0.454.0"
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.3.3",

@@ -2,10 +2,10 @@
   position: relative;
   overflow: hidden;
   background:
-    radial-gradient(circle at 12% 18%, rgba(255, 91, 0, 0.28), transparent 28%),
+    radial-gradient(circle at 12% 18%, rgba(235, 96, 15, 0.28), transparent 28%),
     radial-gradient(circle at 78% 24%, rgba(92, 96, 112, 0.32), transparent 26%),
-    radial-gradient(circle at 52% 120%, rgba(255, 91, 0, 0.16), transparent 34%),
-    linear-gradient(135deg, #090a0d 0%, #15171c 48%, #0c0d10 100%);
+    radial-gradient(circle at 52% 120%, rgba(235, 96, 15, 0.16), transparent 34%),
+    linear-gradient(135deg, var(--surface-night-deep) 0%, var(--ink-700) 48%, var(--surface-night-mid) 100%);
   border-top: 1px solid rgba(255, 255, 255, 0.08);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   padding: 28px 0;
@@ -30,11 +30,11 @@
   grid-template-columns: auto minmax(0, 1fr) auto;
   gap: 22px;
   align-items: center;
-  color: #ffffff;
+  color: var(--surface);
 }
 
 .hero-research-proof strong {
-  color: #ff5b00;
+  color: var(--primary);
   font-size: clamp(48px, 5vw, 82px);
   font-weight: 900;
   line-height: 0.9;

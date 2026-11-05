@@ -1,0 +1,67 @@
+.mobile-vsl-cover {
+  aspect-ratio: 4 / 5;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 22px 20px;
+  background: linear-gradient(155deg, #a62c0a 0%, #d34f00 45%, #ff921e 100%);
+  color: #fff;
+  text-align: left;
+}
+.mobile-cover-heading { display: flex; justify-content: space-between; gap: 10px; font-size: 10px; line-height: 1.5; }
+.mobile-cover-message { margin: 18px 0 14px; font: 400 48px/.98 var(--font-display); text-transform: uppercase; }
+.mobile-cover-message span { color: #fff1e8; }
+.mobile-cover-work { width: 100%; margin: 0; transform: rotate(-3deg); }
+.mobile-cover-work img { display: block; width: 100%; height: auto; aspect-ratio: 1896 / 908; object-fit: contain; border: 3px solid #232524; border-radius: 4px; box-shadow: 0 14px 26px rgba(53, 22, 8, .24); }
+.mobile-cover-work figcaption { margin-top: 8px; font-size: 9px; line-height: 1.5; color: #fff; }
+.mobile-cover-bottom { display: flex; align-items: center; gap: 12px; margin-top: 22px; }
+.mobile-cover-play { flex: 0 0 48px; width: 48px; height: 48px; border: 1px solid rgba(255,255,255,.65); border-radius: 50%; background: #fff; color: #943006; display: grid; place-items: center; opacity: 1; cursor: not-allowed; }
+.mobile-cover-bottom strong, .mobile-cover-bottom span { display: block; }
+.mobile-cover-bottom strong { font-size: 12px; line-height: 1.5; }
+.mobile-cover-bottom span { font-size: 10px; line-height: 1.5; margin-top: 3px; }
+.mobile-cover-player { width: 100%; flex-shrink: 0; }
+.mobile-cover-player .home-video { min-height: 200px; }
+.mobile-vsl-cover:has(.mobile-cover-player) .mobile-cover-message { margin: 12px 0; font-size: 42px; }
+.mobile-vsl-cover:has(.mobile-cover-player) .mobile-cover-bottom { margin-top: 12px; }
+@media (max-width: 600px) {
+  .strategy.strategy-premium {
+    background: linear-gradient(145deg, #fff 0%, #fff 38%, #fff1e8 100%);
+  }
+  .strategy.strategy-premium .strategy-hero {
+    background: linear-gradient(115deg, rgba(255,236,218,.8), rgba(255,255,255,.95) 46%, rgba(255,223,200,.55));
+  }
+  .strategy.strategy-premium .strategy-signature {
+    margin: 0 auto 6px;
+    padding: 4px 20px;
+    border-bottom: 1px solid rgba(211,79,0,.2);
+  }
+  .strategy.strategy-premium .strategy-signature img { width: 138px; height: 46px; }
+  .strategy.strategy-premium h1 { margin-bottom: 24px; }
+  .strategy.strategy-premium .strategy-title-mask { overflow: visible; }
+  .strategy.strategy-premium .marker-word { position: relative; isolation: isolate; white-space: nowrap; }
+  .marker-stroke { position: absolute; left: -2%; bottom: -9px; width: 104%; height: 17px; z-index: -1; overflow: visible; pointer-events: none; }
+  .marker-stroke path { fill: none; stroke: #ef8d3d; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 1; stroke-dashoffset: 0; animation: hand-marker 650ms cubic-bezier(.3,.1,.2,1) 700ms both; }
+  .strategy.strategy-premium .strategy-hero { padding-top: 12px; }
+  .strategy-signature { margin-bottom: 6px; }
+  .strategy-signature img { width: 104px; height: 34px; }
+  .strategy-premium .strategy-hero > .vsl-kicker { display: none; }
+  .strategy-premium .strategy-hero .vsl-kicker { display: none; }
+  .strategy.strategy-premium h1 { font-size: 40px; line-height: 1.02; margin: 4px auto 28px; }
+  .strategy.strategy-premium .strategy-intro { font-size: 13px; line-height: 1.6; margin-bottom: 18px; max-width: 290px; }
+  .strategy.strategy-premium .strategy-video-stage { margin-inline: -16px; }
+  .strategy.strategy-premium .vsl-video { aspect-ratio: 4 / 5; border-radius: 0; }
+  .strategy.strategy-premium .vsl-video-player { object-fit: contain; }
+  .strategy-video-foot { padding-inline: 16px; }
+  .strategy.strategy-premium .strategy-action { margin-top: 18px; }
+  .strategy.strategy-premium .strategy-action > .vsl-button { font-size: 13px; }
+}
+@keyframes hand-marker { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
+@media (prefers-reduced-motion: reduce) { .marker-stroke path { animation: none !important; stroke-dashoffset: 0; } }
+@media (max-width: 350px) {
+  .strategy.strategy-premium h1 { font-size: 34px; }
+  .mobile-vsl-cover { padding: 18px 16px; }
+  .mobile-cover-message { font-size: 42px; margin-top: 12px; }
+  .mobile-cover-bottom { margin-top: 14px; }
+}

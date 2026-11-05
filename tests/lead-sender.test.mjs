@@ -22,6 +22,21 @@ test("simulated, malformed, wrong brand and HTTP failures never report success",
   await assert.rejects(send("appointment_requested", payload));
  }
 });
+test("checkout events are accepted and each event keeps its own idempotency key", async () => {
+ const requests = [];
+ let counter = 0;
+ const send = createLeadSender({ ...options, makeId: () => `9376058c-89d7-4eaa-a3a5-72bef29c5c${String(++counter).padStart(2, "0")}`, fetcher: async (_, init) => {
+  requests.push(init);
+  const event = JSON.parse(init.body).event;
+  return { status: 202, json: async () => ({ ...valid, receipt: { ...valid.receipt, event } }) };
+ } });
+ const checkout = { ...payload, selectedPlan: "launch" };
+ await send("checkout_started", checkout);
+ await send("checkout_payment_requested", checkout);
+ assert.equal(requests.length, 2);
+ assert.notEqual(requests[0].headers["X-Idempotency-Key"], requests[1].headers["X-Idempotency-Key"]);
+ assert.equal(JSON.parse(requests[0].body).selectedPlan, "launch");
+});
 test("concurrent clicks share one request; malformed identity and unsupported events do not fetch", async () => {
  let calls = 0;
  const send = createLeadSender({ ...options, fetcher: async () => { calls++; return { status:202,json:async()=>valid }; } });

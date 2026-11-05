@@ -4,7 +4,7 @@
   padding: 92px 0 104px;
   background:
     radial-gradient(circle at 52% 8%, rgba(235, 96, 15, 0.12), transparent 27%),
-    linear-gradient(180deg, #fffaf6 0%, #f7f2ed 100%);
+    linear-gradient(180deg, var(--surface-warm) 0%, var(--surface-warm-muted) 100%);
   border-top: 1px solid rgba(17, 17, 17, 0.08);
   border-bottom: 1px solid rgba(17, 17, 17, 0.08);
   overflow: hidden;
@@ -24,7 +24,7 @@
 .pricing-kicker {
   display: inline-flex;
   margin-bottom: 14px;
-  color: #eb600f;
+  color: var(--primary);
   font-family: var(--font-body);
   font-size: 16px;
   font-weight: 900;
@@ -35,7 +35,7 @@
 .pricing-title {
   max-width: 1100px;
   margin: 0;
-  color: #111318;
+  color: var(--ink-800);
   font-family: var(--font-display) !important;
   font-size: clamp(56px, 4.75vw, 74px);
   font-weight: 400;
@@ -47,13 +47,13 @@
 }
 
 .pricing-title span {
-  color: #eb600f;
+  color: var(--primary);
 }
 
 .pricing-subtitle {
   max-width: 650px;
   margin: 18px 0 0;
-  color: #303846;
+  color: var(--ink-600);
   font-size: 17px;
   font-weight: 600;
   line-height: 1.58;
@@ -81,7 +81,7 @@
   padding: 24px 24px 20px;
   background: rgba(255, 255, 255, 0.68);
   border: 1px solid rgba(20, 23, 30, 0.12);
-  border-radius: 12px;
+  border-radius: var(--radius-card);
   box-shadow: 0 16px 42px rgba(17, 17, 17, 0.055);
   transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease;
   overflow: hidden;
@@ -99,7 +99,7 @@
   min-height: 410px;
   background:
     linear-gradient(180deg, rgba(255, 246, 240, 0.94), rgba(255, 255, 255, 0.82));
-  border: 2px solid #eb600f;
+  border: 2px solid var(--primary);
   box-shadow:
     0 30px 76px rgba(235, 96, 15, 0.24),
     0 0 0 8px rgba(235, 96, 15, 0.08),
@@ -135,9 +135,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #ffffff;
-  background: #eb600f;
-  border-radius: 8px;
+  color: var(--surface);
+  background: var(--primary);
+  border-radius: var(--radius-sm);
   box-shadow: 0 12px 24px rgba(235, 96, 15, 0.23);
 }
 
@@ -147,7 +147,7 @@
 }
 
 .featured-plan h3 {
-  color: #eb600f;
+  color: var(--primary);
 }
 
 .plan-main {
@@ -156,7 +156,7 @@
 
 .pricing-card h3 {
   margin: 0 0 12px;
-  color: #171717;
+  color: var(--ink-800);
   font-family: var(--font-display) !important;
   font-size: clamp(46px, 3.55vw, 62px);
   font-weight: 400;
@@ -168,7 +168,7 @@
 .plan-intro {
   min-height: 52px;
   margin: 0;
-  color: #4b5563;
+  color: var(--ink-500);
   font-size: 16px;
   font-weight: 600;
   line-height: 1.5;
@@ -179,7 +179,7 @@
   align-items: baseline;
   gap: 8px;
   margin: 18px 0 14px;
-  color: #111318;
+  color: var(--ink-800);
   font-family: var(--font-body);
   font-size: 44px;
   line-height: 0.92;
@@ -188,7 +188,7 @@
 }
 
 .price small {
-  color: #5d6675;
+  color: var(--text-muted);
   font-size: 13px;
   font-weight: 800;
   letter-spacing: 0;
@@ -207,7 +207,7 @@
   display: flex;
   align-items: flex-start;
   gap: 9px;
-  color: #303846;
+  color: var(--ink-600);
   font-size: 15px;
   line-height: 1.45;
   font-weight: 600;
@@ -216,7 +216,7 @@
 .pricing-card ul li svg {
   flex: 0 0 auto;
   margin-top: 2px;
-  color: #eb600f;
+  color: var(--primary);
 }
 
 .plan-footer {
@@ -240,10 +240,10 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border-radius: 8px;
+  border-radius: var(--radius-sm);
   border: 0;
-  background: #ffffff;
-  color: #d34f00;
+  background: var(--surface);
+  color: var(--brand-600);
   font-family: var(--font-body);
   font-size: 15px;
   line-height: 1;
@@ -260,8 +260,8 @@
 
 .plan-button-call {
   border: 1.5px solid rgba(235, 96, 15, 0.55);
-  background: #ffffff;
-  color: #d34f00;
+  background: var(--surface);
+  color: var(--brand-600);
 }
 
 .plan-button-call:hover {
@@ -269,27 +269,27 @@
 }
 
 .plan-button-buy:hover {
-  background: #eb600f;
+  background: var(--primary);
 }
 
 .featured-plan .plan-button-buy {
-  color: #ffffff;
-  background: linear-gradient(135deg, #c20f2f 0%, #eb600f 100%);
+  color: var(--surface);
+  background: linear-gradient(135deg, var(--brand-700) 0%, var(--primary) 100%);
   box-shadow: 0 16px 28px rgba(194, 15, 47, 0.24);
 }
 
 .featured-plan .plan-button-buy:hover {
-  background: linear-gradient(135deg, #b50d2b 0%, #ff6714 100%);
+  background: linear-gradient(135deg, var(--brand-700) 0%, var(--brand-400) 100%);
 }
 
 .popular-badge {
   position: absolute;
   top: 24px;
   right: 24px;
-  color: #eb600f;
-  background: #fff1e8;
+  color: var(--primary);
+  background: var(--brand-50);
   border: 1px solid rgba(235, 96, 15, 0.2);
-  border-radius: 8px;
+  border-radius: var(--radius-sm);
   padding: 8px 11px;
   font-family: var(--font-body);
   font-size: 11px;
@@ -307,7 +307,7 @@
   margin-top: -18px;
   padding: 24px 26px;
   border: 1px solid rgba(235, 96, 15, 0.22);
-  border-radius: 16px;
+  border-radius: var(--radius-panel);
   background:
     radial-gradient(circle at 100% 0%, rgba(235, 96, 15, 0.16), transparent 34%),
     linear-gradient(135deg, rgba(255, 255, 255, 0.88), rgba(255, 247, 241, 0.74));
@@ -319,7 +319,7 @@
 .pricing-custom-project span {
   display: inline-flex;
   margin-bottom: 8px;
-  color: #eb600f;
+  color: var(--primary);
   font-size: 12px;
   font-weight: 950;
   letter-spacing: 0.18em;
@@ -329,7 +329,7 @@
 
 .pricing-custom-project h3 {
   margin: 0;
-  color: #111318;
+  color: var(--ink-800);
   font-size: clamp(24px, 2vw, 34px);
   font-weight: 950;
   line-height: 1.06;
@@ -338,7 +338,7 @@
 .pricing-custom-project p {
   max-width: 830px;
   margin: 8px 0 0;
-  color: #3f4652;
+  color: var(--ink-600);
   font-size: 15.5px;
   font-weight: 650;
   line-height: 1.55;
@@ -351,9 +351,9 @@
   justify-content: center;
   white-space: nowrap;
   padding: 0 22px;
-  border-radius: 10px;
-  background: #eb600f;
-  color: #ffffff;
+  border-radius: var(--radius-control);
+  background: var(--primary);
+  color: var(--surface);
   font-size: 15px;
   font-weight: 900;
   text-decoration: none;
@@ -363,14 +363,14 @@
 
 .pricing-custom-button:hover {
   transform: translateY(-2px);
-  background: #d9560b;
+  background: var(--brand-600);
 }
 
 .pricing-included {
   margin-top: 8px;
   padding: 34px 36px 30px;
   border: 1px solid rgba(235, 96, 15, 0.16);
-  border-radius: 18px;
+  border-radius: var(--radius-feature);
   background:
     radial-gradient(circle at 92% 0%, rgba(235, 96, 15, 0.13), transparent 32%),
     radial-gradient(circle at 8% 0%, rgba(17, 19, 24, 0.05), transparent 24%),
@@ -383,9 +383,9 @@
   margin-bottom: 18px;
   padding: 10px 18px;
   border: 1px solid rgba(235, 96, 15, 0.18);
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.72);
-  color: #eb600f;
+  border-radius: var(--radius-pill);
+  background: var(--surface-glass);
+  color: var(--primary);
   font-size: 12px;
   font-weight: 900;
   letter-spacing: 0.22em;
@@ -396,7 +396,7 @@
 .pricing-included h3 {
   max-width: 940px;
   margin: 0;
-  color: #111318;
+  color: var(--ink-800);
   font-family: var(--font-body);
   font-size: clamp(30px, 2.7vw, 44px);
   font-weight: 900;
@@ -407,7 +407,7 @@
 .pricing-included > p {
   max-width: 780px;
   margin: 14px 0 26px;
-  color: #3f4652;
+  color: var(--ink-600);
   font-size: 16px;
   font-weight: 650;
   line-height: 1.65;
@@ -426,7 +426,7 @@
   align-items: center;
   gap: 12px;
   border-bottom: 1px solid rgba(17, 19, 24, 0.09);
-  color: #242b36;
+  color: var(--readable-text);
   font-size: 15px;
   font-weight: 850;
   line-height: 1.35;
@@ -434,13 +434,13 @@
 
 .pricing-included-item svg {
   flex: 0 0 auto;
-  color: #eb600f;
+  color: var(--primary);
 }
 
 .pricing-disclaimer {
   max-width: 1120px;
   margin: -8px 0 0;
-  color: #687080;
+  color: var(--ink-400);
   font-size: 13px;
   font-weight: 650;
   line-height: 1.75;
@@ -449,7 +449,7 @@
 @keyframes featuredGlow {
   0%,
   100% {
-    border-color: #eb600f;
+    border-color: var(--primary);
     box-shadow:
       0 30px 76px rgba(235, 96, 15, 0.22),
       0 0 0 8px rgba(235, 96, 15, 0.07),
@@ -457,11 +457,11 @@
   }
 
   50% {
-    border-color: #ff7a21;
+    border-color: var(--brand-400);
     box-shadow:
       0 34px 84px rgba(235, 96, 15, 0.29),
       0 0 0 11px rgba(235, 96, 15, 0.1),
-      0 0 0 1px rgba(255, 122, 33, 0.28) inset;
+      0 0 0 1px rgba(255, 123, 44, 0.28) inset;
   }
 }
 

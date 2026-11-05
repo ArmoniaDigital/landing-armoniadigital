@@ -45,7 +45,7 @@ export default function Footer({ copy }) {
         <div className="footer-links">
           <a href="#precios">{copy.links[0]}</a>
           <a href="#faq">{copy.links[1]}</a>
-          <a href="#blog">{copy.links[2]}</a>
+          <a href="/blog">{copy.links[2]}</a>
           <a href="#politica-privacidad">{copy.links[3]}</a>
           <button type="button" className="footer-cookie-settings" onClick={() => window.dispatchEvent(new Event(OPEN_CONSENT_EVENT))}>Preferencias de cookies</button>
         </div>

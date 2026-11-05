@@ -34,7 +34,7 @@ export default function Blog({ copy, contactHref }) {
         <div className="container blog-list-layout">
           <article className="blog-featured-card">
             <div className="blog-featured-image">
-              <img src={blogImages[0]} alt={copy.featured.title} loading="eager" fetchPriority="high" />
+              <img src={blogImages[0]} alt={copy.featured.title} loading="eager" fetchpriority="high" />
             </div>
             <div className="blog-featured-copy">
               <span className="blog-category">{copy.featured.category}</span>

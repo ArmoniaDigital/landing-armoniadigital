@@ -1,4 +1,4 @@
-const supported = new Set(["appointment_requested", "checkout_payment_requested"]);
+const supported = new Set(["appointment_requested", "checkout_started", "checkout_payment_requested"]);
 export function createLeadSender({ endpoint, brand, fetcher = (...args) => fetch(...args), makeId = () => crypto.randomUUID() }) {
   const pending = new Map();
   return async function send(event, payload) {

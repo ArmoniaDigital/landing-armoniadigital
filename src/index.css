@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=League+Gothic&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
-
 @import "./Styles/variables.css";
 @import "./Styles/base.css";
 @import "./Styles/buttons.css";
@@ -27,12 +25,7 @@
 @import "./components/CookieConsent/CookieConsent.css";
 
 /* 2026 readability pass: keep display type, make body UI easier to scan. */
-:root {
-  --font-main: "Plus Jakarta Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  --font-body: "Plus Jakarta Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  --readable-text: #252b35;
-  --readable-muted: #4b5563;
-}
+/* Los tokens de tipografía y color viven en Styles/variables.css. */
 
 body {
   font-family: var(--font-body);
@@ -58,7 +51,7 @@ p {
 .preparation-heading > span {
   display: inline-flex;
   margin-bottom: 14px;
-  color: #eb600f;
+  color: var(--primary);
   font-family: var(--font-body);
   font-size: 16px;
   font-weight: 900;
@@ -235,10 +228,10 @@ nav a {
   align-items: center;
   justify-content: center;
   border: 0;
-  border-radius: 10px;
-  background: #ff5b00;
-  color: #ffffff;
-  box-shadow: 0 14px 30px rgba(255, 91, 0, 0.32);
+  border-radius: var(--radius-control);
+  background: var(--brand-500);
+  color: var(--surface);
+  box-shadow: var(--shadow-brand);
   cursor: pointer;
   opacity: 0;
   visibility: hidden;
@@ -253,7 +246,7 @@ nav a {
 }
 
 .back-to-top:hover {
-  background: #eb600f;
+  background: var(--brand-600);
   transform: translateY(-3px);
 }
 
@@ -276,14 +269,14 @@ nav a {
 }
 
 .plan-button-buy {
-  background: #f47b32 !important;
-  color: #ffffff !important;
+  background: var(--brand-400) !important;
+  color: var(--surface) !important;
 }
 
 .plan-button-buy:hover {
-  background: #eb600f !important;
+  background: var(--brand-500) !important;
 }
 
 .featured-plan .plan-button-buy {
-  background: linear-gradient(135deg, #c20f2f 0%, #eb600f 100%) !important;
+  background: var(--gradient-featured) !important;
 }

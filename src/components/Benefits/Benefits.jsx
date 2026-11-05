@@ -171,7 +171,9 @@ export default function Benefits({ copy }) {
             {isVideoActive ? (
               <iframe
                 ref={iframeRef}
-                src={`https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&controls=0&disablekb=1&fs=0&iv_load_policy=3&modestbranding=1&playsinline=1&rel=0&cc_load_policy=0&hl=es&enablejsapi=1&origin=${encodeURIComponent(window.location.origin)}`}
+                src={`https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&controls=0&disablekb=1&fs=0&iv_load_policy=3&modestbranding=1&playsinline=1&rel=0&cc_load_policy=0&hl=es&enablejsapi=1&origin=${encodeURIComponent(
+                  typeof window !== "undefined" ? window.location.origin : "https://armoniadigital.digital",
+                )}`}
                 title={videoTitle}
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen

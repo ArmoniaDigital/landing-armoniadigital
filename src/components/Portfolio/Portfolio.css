@@ -26,7 +26,7 @@
 .portfolio-kicker {
   display: inline-flex;
   margin-bottom: 14px;
-  color: #eb600f;
+  color: var(--primary);
   font-family: var(--font-body);
   font-size: 16px;
   font-weight: 900;
@@ -37,7 +37,7 @@
 .portfolio-title {
   max-width: 860px;
   margin: 0;
-  color: #101014;
+  color: var(--ink-800);
   font-family: var(--font-display, "League Gothic", sans-serif) !important;
   font-size: clamp(54px, 4.55vw, 74px);
   font-weight: 400;
@@ -67,10 +67,10 @@
 .portfolio-filters button {
   min-height: 42px;
   padding: 0 18px;
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   border: 1px solid rgba(17, 17, 17, 0.12);
   background: rgba(255, 255, 255, 0.66);
-  color: #252b35;
+  color: var(--readable-text);
   font-family: var(--font-body);
   font-size: 14.5px;
   font-weight: 800;
@@ -81,14 +81,14 @@
 
 .portfolio-filters button:hover {
   border-color: rgba(235, 96, 15, 0.36);
-  color: #eb600f;
+  color: var(--primary);
   transform: translateY(-1px);
 }
 
 .portfolio-filters button.active {
-  background: #eb600f;
-  border-color: #eb600f;
-  color: #ffffff;
+  background: var(--primary);
+  border-color: var(--primary);
+  color: var(--surface);
   box-shadow: 0 12px 24px rgba(235, 96, 15, 0.2);
 }
 
@@ -102,8 +102,8 @@
   position: relative;
   min-height: 210px;
   overflow: hidden;
-  border-radius: 12px;
-  background: #e8e2dc;
+  border-radius: var(--radius-card);
+  background: var(--surface-warm-line);
   box-shadow: 0 18px 42px rgba(17, 17, 17, 0.08);
   isolation: isolate;
 }
@@ -165,7 +165,7 @@
   right: 18px;
   bottom: 17px;
   z-index: 2;
-  color: #ffffff;
+  color: var(--surface);
 }
 
 .portfolio-card-copy span {
@@ -180,7 +180,7 @@
 
 .portfolio-card-copy h3 {
   margin: 0;
-  color: #ffffff;
+  color: var(--surface);
   font-family: var(--font-display, "League Gothic", sans-serif) !important;
   font-size: 14px;
   font-weight: 400;
@@ -195,10 +195,10 @@
   flex-direction: column;
   gap: 0;
   min-height: 280px;
-  background: #1a1a2e;
+  background: var(--surface-night);
   border: none;
   overflow: hidden;
-  border-radius: 16px;
+  border-radius: var(--radius-panel);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
   transition: transform 320ms ease, box-shadow 320ms ease;
 }
@@ -261,13 +261,13 @@
 }
 
 .portfolio-card-category {
-  color: #ffffff;
+  color: var(--surface);
   font-family: var(--font-body);
   font-size: 13px;
   font-weight: 700;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  background: #eb600f;
+  background: var(--primary);
   padding: 4px 10px;
   border-radius: 4px;
 }
@@ -275,7 +275,7 @@
 .portfolio-card--real .portfolio-card-copy {
   position: static;
   margin-top: auto;
-  color: #ffffff;
+  color: var(--surface);
 }
 
 .portfolio-card--real .portfolio-card-copy h3 {
@@ -284,8 +284,8 @@
 }
 
 .portfolio-card--real .portfolio-card-category {
-  background: #eb600f;
-  color: #ffffff;
+  background: var(--primary);
+  color: var(--surface);
 }
 
 .portfolio-card-url {
@@ -295,7 +295,7 @@
   margin-top: 10px;
   padding: 5px 12px;
   background: rgba(235, 96, 15, 0.9);
-  color: #ffffff;
+  color: var(--surface);
   font-family: var(--font-body);
   font-size: 13px;
   font-weight: 600;
@@ -306,7 +306,7 @@
 }
 
 .portfolio-card-url:hover {
-  background: #c44e0c;
+  background: var(--brand-600);
   text-decoration: none;
 }
 
@@ -329,7 +329,7 @@
   justify-content: center;
   gap: 10px;
   padding: 0 24px;
-  border-radius: 10px;
+  border-radius: var(--radius-control);
   border: 1.5px solid transparent;
   font-family: var(--font-body);
   font-size: 15.5px;
@@ -341,15 +341,15 @@
 }
 
 .portfolio-button-primary {
-  background: #eb600f;
-  color: #ffffff;
-  border-color: #eb600f;
+  background: var(--primary);
+  color: var(--surface);
+  border-color: var(--primary);
   box-shadow: 0 16px 34px rgba(235, 96, 15, 0.22);
 }
 
 .portfolio-button-secondary {
-  background: #ffffff;
-  color: #eb600f;
+  background: var(--surface);
+  color: var(--primary);
   border-color: rgba(235, 96, 15, 0.45);
 }
 
@@ -359,8 +359,8 @@
 }
 
 .portfolio-button-primary:hover {
-  background: #f56b14;
-  border-color: #f56b14;
+  background: var(--brand-500);
+  border-color: var(--brand-500);
   box-shadow: 0 20px 40px rgba(235, 96, 15, 0.28);
 }
 

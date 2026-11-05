@@ -1,125 +1,89 @@
-@import url("https://fonts.googleapis.com/css2?family=League+Gothic&family=Inter:wght@300;400;500;600;700;800&display=swap");
 /* ===========================
-   BUTTONS
+   BUTTONS — términos de marca
+   (colores, radios y sombras desde Styles/variables.css)
 =========================== */
 
 .btn-primary,
 .btn-secondary,
-.btn-glass{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    gap:.75rem;
+.btn-glass {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
 
-    height:56px;
+    height: 56px;
+    padding: 0 28px;
 
-    padding:0 28px;
+    border-radius: var(--radius-control);
 
-    border-radius:999px;
+    font-size: 0.95rem;
+    font-weight: 700;
 
-    font-size:.95rem;
+    transition: all var(--transition);
 
-    font-weight:700;
-
-    transition:all var(--transition);
-
-    cursor:pointer;
-
-    user-select:none;
+    cursor: pointer;
+    user-select: none;
 }
 
 /* -------------------------- */
 
-.btn-primary{
-
-    color:#fff;
-
-    background:var(--gradient-primary);
-
-    box-shadow:
-        0 20px 40px rgba(37,99,235,.25);
-
+.btn-primary {
+    color: var(--surface);
+    background: var(--primary);
+    box-shadow: var(--shadow-brand);
 }
 
-.btn-primary:hover{
-
-    transform:translateY(-3px);
-
-    box-shadow:
-        0 28px 60px rgba(37,99,235,.35);
-
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-brand-strong);
 }
 
 /* -------------------------- */
 
-.btn-secondary{
-
-    color:var(--text);
-
-    background:rgba(255,255,255,.72);
-
-    backdrop-filter:blur(20px);
-
-    border:1px solid rgba(255,255,255,.75);
-
-    box-shadow:var(--shadow-sm);
-
+.btn-secondary {
+    color: var(--text);
+    background: var(--surface-glass);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.75);
+    box-shadow: var(--shadow-sm);
 }
 
-.btn-secondary:hover{
-
-    transform:translateY(-3px);
-
-    background:#fff;
-
-    box-shadow:var(--shadow-md);
-
+.btn-secondary:hover {
+    transform: translateY(-3px);
+    background: var(--surface);
+    box-shadow: var(--shadow-md);
 }
 
 /* -------------------------- */
 
-.btn-glass{
-
-    color:var(--text);
-
-    background:transparent;
-
-    border:1px solid var(--border);
-
+.btn-glass {
+    color: var(--text);
+    background: transparent;
+    border: 1px solid var(--border);
 }
 
-.btn-glass:hover{
-
-    background:white;
-
+.btn-glass:hover {
+    background: var(--surface);
 }
 
 /* -------------------------- */
 
 .btn-primary svg,
 .btn-secondary svg,
-.btn-glass svg{
-
-    transition:transform .25s ease;
-
+.btn-glass svg {
+    transition: transform 0.25s ease;
 }
 
-.btn-primary:hover svg{
-
-    transform:translateX(4px);
-
+.btn-primary:hover svg {
+    transform: translateX(4px);
 }
 
 /* -------------------------- */
 
-@media(max-width:768px){
-
-.btn-primary,
-.btn-secondary,
-.btn-glass{
-
-width:100%;
-
-}
-
+@media (max-width: 768px) {
+    .btn-primary,
+    .btn-secondary,
+    .btn-glass {
+        width: 100%;
+    }
 }

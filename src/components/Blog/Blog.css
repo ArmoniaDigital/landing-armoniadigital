@@ -1,6 +1,6 @@
 .blog-page {
   min-height: 100vh;
-  background: #fbf8f3;
+  background: var(--surface-warm-page);
 }
 
 .blog-hero {
@@ -10,7 +10,7 @@
   background:
     radial-gradient(circle at 16% 18%, rgba(235, 96, 15, 0.2), transparent 28%),
     radial-gradient(circle at 84% 12%, rgba(17, 19, 24, 0.12), transparent 26%),
-    linear-gradient(135deg, #fffaf6 0%, #f3ece4 56%, #fff6ee 100%);
+    linear-gradient(135deg, var(--surface-warm) 0%, var(--surface-warm-muted) 56%, var(--surface-warm-strong) 100%);
   border-bottom: 1px solid rgba(17, 19, 24, 0.08);
 }
 
@@ -25,7 +25,7 @@
   display: inline-flex;
   align-items: center;
   gap: 9px;
-  color: #eb600f;
+  color: var(--primary);
   font-size: 14px;
   font-weight: 900;
   text-decoration: none;
@@ -37,7 +37,7 @@
 
 .blog-hero-copy h1 {
   margin: 0;
-  color: #111318;
+  color: var(--ink-800);
   font-family: var(--font-display) !important;
   font-size: clamp(64px, 7vw, 118px);
   font-weight: 400;
@@ -47,13 +47,13 @@
 }
 
 .blog-hero-copy h1 span {
-  color: #eb600f;
+  color: var(--primary);
 }
 
 .blog-hero-copy p {
   max-width: 650px;
   margin: 20px 0 0;
-  color: #303846;
+  color: var(--ink-600);
   font-size: clamp(17px, 1.2vw, 20px);
   font-weight: 650;
   line-height: 1.62;
@@ -73,7 +73,7 @@
   grid-template-columns: minmax(0, 1.08fr) minmax(360px, 0.92fr);
   overflow: hidden;
   border: 1px solid rgba(17, 19, 24, 0.1);
-  border-radius: 18px;
+  border-radius: var(--radius-feature);
   background:
     radial-gradient(circle at 100% 0%, rgba(235, 96, 15, 0.14), transparent 36%),
     rgba(255, 255, 255, 0.78);
@@ -84,7 +84,7 @@
 .blog-card-image {
   position: relative;
   overflow: hidden;
-  background: #e9e1d8;
+  background: var(--surface-warm-line);
 }
 
 .blog-featured-image {
@@ -118,7 +118,7 @@
   width: fit-content;
   display: inline-flex;
   margin-bottom: 16px;
-  color: #eb600f;
+  color: var(--primary);
   font-size: 12.5px;
   font-weight: 900;
   letter-spacing: 0.06em;
@@ -129,7 +129,7 @@
 .blog-card-copy h2,
 .blog-cta h2 {
   margin: 0;
-  color: #111318;
+  color: var(--ink-800);
   font-family: var(--font-display) !important;
   font-weight: 400;
   line-height: 0.9;
@@ -145,7 +145,7 @@
 .blog-card-copy p,
 .blog-cta p {
   margin: 16px 0 0;
-  color: #3d4552;
+  color: var(--ink-600);
   font-size: 16px;
   font-weight: 650;
   line-height: 1.58;
@@ -163,7 +163,7 @@
   display: inline-flex;
   align-items: center;
   gap: 7px;
-  color: #667085;
+  color: var(--ink-400);
   font-size: 13px;
   font-weight: 800;
 }
@@ -176,9 +176,9 @@
   gap: 10px;
   margin-top: 26px;
   padding: 0 20px;
-  border-radius: 10px;
-  background: #eb600f;
-  color: #ffffff;
+  border-radius: var(--radius-control);
+  background: var(--primary);
+  color: var(--surface);
   font-size: 14.5px;
   font-weight: 900;
   text-decoration: none;
@@ -194,7 +194,7 @@
 .blog-card {
   overflow: hidden;
   border: 1px solid rgba(17, 19, 24, 0.1);
-  border-radius: 16px;
+  border-radius: var(--radius-panel);
   background: rgba(255, 255, 255, 0.78);
   box-shadow: 0 18px 48px rgba(17, 19, 24, 0.06);
 }
@@ -218,15 +218,15 @@
   gap: 28px;
   margin-top: 8px;
   padding: 30px;
-  border-radius: 18px;
+  border-radius: var(--radius-feature);
   background:
     radial-gradient(circle at 12% 22%, rgba(235, 96, 15, 0.2), transparent 32%),
-    linear-gradient(135deg, #111318 0%, #23252a 56%, #0f1013 100%);
+    linear-gradient(135deg, var(--ink-800) 0%, var(--ink-700) 56%, var(--ink-900) 100%);
   box-shadow: 0 24px 60px rgba(17, 19, 24, 0.18);
 }
 
 .blog-cta span {
-  color: #ff7b2c;
+  color: var(--brand-400);
   font-size: 13px;
   font-weight: 900;
   letter-spacing: 0.06em;
@@ -235,7 +235,7 @@
 
 .blog-cta h2,
 .blog-cta p {
-  color: #ffffff;
+  color: var(--surface);
 }
 
 .blog-cta h2 {
@@ -265,7 +265,7 @@
   justify-content: center;
   gap: 10px;
   padding: 0 22px;
-  border-radius: 10px;
+  border-radius: var(--radius-control);
   font-size: 15px;
   font-weight: 900;
   text-decoration: none;
@@ -273,14 +273,14 @@
 }
 
 .blog-cta-primary {
-  background: #eb600f;
-  color: #ffffff;
+  background: var(--primary);
+  color: var(--surface);
   box-shadow: 0 18px 36px rgba(235, 96, 15, 0.3);
 }
 
 .blog-cta-secondary {
   border: 1px solid rgba(255, 255, 255, 0.34);
-  color: #ffffff;
+  color: var(--surface);
   background: rgba(255, 255, 255, 0.08);
 }
 

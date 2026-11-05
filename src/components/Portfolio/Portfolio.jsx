@@ -35,9 +35,15 @@ const projectImages = {
 const projectRedirectUrls = {
   "Aurinel Martinez": "https://aurinelmartinez.com/",
   "Oniria Propiedades": "https://www.oniriapropiedades.cl/",
-  "La Sele Store": "https://armoniadigital.digital/selestore/",
+  "La Sele Store": "https://www.armoniadigital.digital/selestore",
   "Casabueno": "http://casabueno.com.ar",
 };
+
+function projectHref(project) {
+  const redirect = projectRedirectUrls[project.title];
+  if (redirect) return redirect;
+  return project.url ? `https://${project.url}` : "";
+}
 
 export default function Portfolio({ copy }) {
   const [activeFilter, setActiveFilter] = useState(copy.filters[0]);
@@ -101,10 +107,11 @@ export default function Portfolio({ copy }) {
                   transition={{ duration: 0.34, delay: index * 0.04 }}
                   layout
                   onClick={() => {
-                    const redirectUrl = projectRedirectUrls[project.title] || `https://${project.url}`;
+                    const redirectUrl = projectHref(project);
+                    if (!redirectUrl) return;
                     window.open(redirectUrl, "_blank", "noopener,noreferrer");
                   }}
-                  style={{ cursor: project.url ? "pointer" : "default" }}
+                  style={{ cursor: projectHref(project) ? "pointer" : "default" }}
                 >
                   {project.image && (
                     <div className="portfolio-image-wrap">

@@ -1,7 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /#welcome
-Disallow: /#checkout
-Disallow: /#agendar
 
 Sitemap: https://armoniadigital.digital/sitemap.xml

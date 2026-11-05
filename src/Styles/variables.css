@@ -1,43 +1,107 @@
-@import url("https://fonts.googleapis.com/css2?family=League+Gothic&family=Inter:wght@300;400;500;600;700;800&display=swap");
-/* ===========================
-   ARMONÍA DIGITAL - DESIGN SYSTEM
-   Sprint 1: Foundations
-=========================== */
+@import url("https://fonts.googleapis.com/css2?family=League+Gothic&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap");
+
+/* ===========================================================
+   ARMONÍA DIGITAL — TÉRMINOS DE DISEÑO DE MARCA
+   Fuente única de verdad. Ningún componente debe declarar
+   colores, fuentes, radios o sombras de marca por su cuenta.
+   =========================================================== */
 
 :root {
   /* =========================
-     COLOR SYSTEM
+     MARCA · NARANJA ARMONÍA
   ========================= */
+  --brand-50: #fff1e8;
+  --brand-100: #fff7ef;
+  --brand-200: #fffaf6;
+  --brand-300: #ffa36b;
+  --brand-400: #ff7b2c;
+  --brand-500: #eb600f;   /* color primario de marca */
+  --brand-600: #d34f00;   /* hover / texto sobre claro */
+  --brand-700: #c20f2f;   /* rojo rubí: planes destacados */
 
-  --bg: #f7f8fc;            /* base background */
-  --bg-soft: #f1f4f9;       /* sections subtle */
-  --surface: #ffffff;       /* cards */
-  --surface-glass: rgba(255, 255, 255, 0.7);
-
-  --text: #0b0f19;          /* primary text */
-  --text-muted: #5b6475;    /* secondary text */
-  --text-soft: #8b93a7;     /* tertiary */
-
-  --primary: #EB600F;       /* modern blue */
-  --primary-dark: #EB600F;
-  --primary-soft: rgba(47, 107, 255, 0.12);
-  --gradient-primary: linear-gradient(135deg, #EB600F 0%, #EB600F 100%);
-  --text-light: #5b6475;
-  --transition: 280ms cubic-bezier(0.16, 1, 0.3, 1);
-
-  --border: rgba(15, 23, 42, 0.08);
-  --border-strong: rgba(15, 23, 42, 0.14);
+  /* Alias heredados (mantener compatibilidad) */
+  --primary: var(--brand-500);
+  --primary-dark: var(--brand-600);
+  --primary-light: var(--brand-400);
+  --primary-soft: rgba(235, 96, 15, 0.12);
+  --gradient-primary: linear-gradient(135deg, var(--brand-500) 0%, var(--brand-400) 100%);
+  --gradient-featured: linear-gradient(135deg, var(--brand-700) 0%, var(--brand-500) 100%);
+  --gradient-featured-hover: linear-gradient(135deg, #b50d2b 0%, #ff6714 100%);
 
   /* =========================
-     TYPOGRAPHY
+     NEUTROS
   ========================= */
+  --ink-900: #0b0f19;
+  --ink-800: #111318;
+  --ink-700: #171a20;
+  --ink-600: #303846;
+  --ink-500: #4b5563;
+  --ink-400: #687080;
+  --ink-300: #8b93a7;
+  --ink-200: #9aa1ad;
 
-  --font-main: "Inter", system-ui, -apple-system, sans-serif;
+  /* =========================
+     SUPERFICIES
+  ========================= */
+  --bg: #f7f8fc;                          /* fondo base del sitio */
+  --bg-soft: #f1f4f9;                     /* secciones sutiles */
+  --surface: #ffffff;                     /* tarjetas */
+  --surface-glass: rgba(255, 255, 255, 0.7);
+  --surface-warm: var(--brand-200);       /* crema de marca */
+  --surface-warm-strong: var(--brand-100);
+  --surface-warm-page: #fbf8f3;           /* secciones cálidas suaves */
+  --surface-warm-muted: #f4eee7;
+  --surface-warm-line: #e8e2dc;           /* líneas sobre superficie cálida */
+  --surface-dark: #101010;                /* footer / bloques oscuros */
+  --surface-night: #1a1a2e;               /* tarjetas de portafolio */
+  --surface-night-deep: #08090d;          /* extremo de degradados nocturnos */
+  --surface-night-mid: #0c0d10;
+
+  /* =========================
+     TEXTO
+  ========================= */
+  --text: var(--ink-800);
+  --text-muted: #5b6475;
+  --text-soft: var(--ink-300);
+  --text-light: var(--ink-500);
+  --readable-text: #252b35;
+  --readable-muted: var(--ink-500);
+
+  /* =========================
+     BORDES
+  ========================= */
+  --border: rgba(15, 23, 42, 0.08);
+  --border-strong: rgba(15, 23, 42, 0.14);
+  --border-card: rgba(16, 24, 40, 0.12);
+  --border-brand: rgba(235, 96, 15, 0.28);
+
+  /* =========================
+     ESTADOS
+  ========================= */
+  --success: #0f8f4f;
+  --success-soft: #e8f6ee;
+  --danger: #b42318;
+  --danger-soft: #fdecea;
+  --warning: #c2381f;
+
+  /* =========================
+     TIPOGRAFÍA
+  ========================= */
+  --font-display: "League Gothic", "Arial Narrow", Impact, sans-serif;
+  --font-body: "Plus Jakarta Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-main: var(--font-body);
+
+  --display-case: uppercase;
+  --display-tracking: 0.012em;
+  --display-leading: 0.92;
 
   --h1: 72px;
   --h2: 48px;
   --h3: 32px;
   --h4: 24px;
+
+  --h1-fluid: clamp(64px, 7vw, 104px);
+  --h2-fluid: clamp(44px, 4.55vw, 71px);
 
   --text-lg: 18px;
   --text-md: 16px;
@@ -49,9 +113,8 @@
   --lh-relaxed: 1.6;
 
   /* =========================
-     SPACING SYSTEM (8pt grid)
+     ESPACIADO (grilla 8pt)
   ========================= */
-
   --space-1: 4px;
   --space-2: 8px;
   --space-3: 12px;
@@ -64,32 +127,39 @@
   --space-10: 128px;
 
   /* =========================
-     RADIUS
+     RADIOS
   ========================= */
+  --radius-control: 10px;   /* botones e inputs */
+  --radius-card: 12px;      /* tarjetas */
+  --radius-soft: 14px;      /* contenedores y formularios */
+  --radius-panel: 16px;     /* bloques grandes */
+  --radius-feature: 18px;   /* testimonios / destacados */
+  --radius-overlay: 22px;   /* navbar flotante y overlays */
 
-  --radius-sm: 12px;
-  --radius-md: 18px;
-  --radius-lg: 24px;
-  --radius-xl: 28px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 18px;
   --radius-pill: 999px;
 
   /* =========================
-     SHADOWS (soft premium)
+     SOMBRAS
   ========================= */
-
   --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.04);
   --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.06);
   --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.08);
-
-  --shadow-glow: 0 0 0 1px rgba(47, 107, 255, 0.12),
-                 0 20px 60px rgba(47, 107, 255, 0.12);
+  --shadow-card: 0 16px 42px rgba(17, 17, 17, 0.055);
+  --shadow-brand: 0 15px 35px rgba(235, 96, 15, 0.22);
+  --shadow-brand-strong: 0 28px 60px rgba(235, 96, 15, 0.3);
+  --shadow-glow: 0 0 0 1px rgba(235, 96, 15, 0.12),
+                 0 20px 60px rgba(235, 96, 15, 0.12);
 
   /* =========================
-     TRANSITIONS
+     MOVIMIENTO
   ========================= */
-
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-in-out: cubic-bezier(0.83, 0, 0.17, 1);
+  --transition: 280ms cubic-bezier(0.16, 1, 0.3, 1);
 
   --t-fast: 180ms;
   --t-medium: 280ms;
@@ -98,7 +168,6 @@
   /* =========================
      LAYOUT
   ========================= */
-
   --page-max: 1320px;
   --container: var(--page-max);
   --container-wide: var(--page-max);
@@ -106,7 +175,6 @@
   /* =========================
      Z-INDEX
   ========================= */
-
   --z-base: 1;
   --z-nav: 100;
   --z-modal: 1000;

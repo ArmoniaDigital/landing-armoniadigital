@@ -13,7 +13,7 @@
   padding: 18px;
   background: rgba(255, 255, 255, 0.94);
   border: 1px solid rgba(17, 19, 24, 0.12);
-  border-radius: 14px;
+  border-radius: var(--radius-soft);
   box-shadow: 0 22px 60px rgba(17, 19, 24, 0.16);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
@@ -25,16 +25,16 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #eb600f;
-  background: #fff3ec;
+  color: var(--primary);
+  background: var(--brand-50);
   border: 1px solid rgba(235, 96, 15, 0.16);
-  border-radius: 12px;
+  border-radius: var(--radius-card);
 }
 
 .cookie-consent__copy strong {
   display: block;
   margin-bottom: 4px;
-  color: #111318;
+  color: var(--ink-800);
   font-size: 15.5px;
   font-weight: 900;
   line-height: 1.25;
@@ -43,14 +43,14 @@
 .cookie-consent__copy p {
   max-width: 650px;
   margin: 0;
-  color: #3e4654;
+  color: var(--ink-600);
   font-size: 13.5px;
   font-weight: 600;
   line-height: 1.45;
 }
 
 .cookie-consent__copy a {
-  color: #eb600f;
+  color: var(--primary);
   font-weight: 900;
   text-decoration: underline;
   text-underline-offset: 3px;
@@ -66,7 +66,7 @@
 .cookie-consent__secondary {
   min-height: 44px;
   padding: 0 17px;
-  border-radius: 10px;
+  border-radius: var(--radius-control);
   font-size: 13.5px;
   font-weight: 900;
   line-height: 1;
@@ -75,25 +75,25 @@
 }
 
 .cookie-consent__primary {
-  color: #ffffff;
-  background: #ff5b00;
-  box-shadow: 0 14px 30px rgba(255, 91, 0, 0.26);
+  color: var(--surface);
+  background: var(--primary);
+  box-shadow: 0 14px 30px rgba(235, 96, 15, 0.26);
 }
 
 .cookie-consent__primary:hover {
   transform: translateY(-2px);
-  background: #eb600f;
+  background: var(--primary);
 }
 
 .cookie-consent__secondary {
-  color: #eb600f;
-  background: #fff3ec;
+  color: var(--primary);
+  background: var(--brand-50);
   border: 1px solid rgba(235, 96, 15, 0.18);
 }
 
 .cookie-consent__secondary:hover {
   transform: translateY(-2px);
-  background: #ffe7db;
+  background: var(--brand-50);
 }
 
 .cookie-consent__close {
@@ -102,13 +102,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #555f6f;
+  color: var(--text-muted);
   background: transparent;
-  border-radius: 10px;
+  border-radius: var(--radius-control);
 }
 
 .cookie-consent__close:hover {
-  color: #111318;
+  color: var(--ink-800);
   background: rgba(17, 19, 24, 0.06);
 }
 

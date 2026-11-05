@@ -5,7 +5,7 @@
   padding: 92px 0 72px;
   background:
     radial-gradient(circle at 82% 10%, rgba(235, 96, 15, 0.16), transparent 28%),
-    #fbf8f3 url("./testimonials_back.avif") center/cover no-repeat;
+    var(--surface-warm-page) url("./testimonials_back.avif") center/cover no-repeat;
   border-top: 1px solid rgba(17, 17, 17, 0.08);
 }
 
@@ -30,7 +30,7 @@
 .testimonials-title {
   max-width: 900px;
   margin: 0;
-  color: #111318;
+  color: var(--ink-800);
   font-family: var(--font-display) !important;
   font-size: clamp(54px, 4.55vw, 74px);
   font-weight: 400;
@@ -41,7 +41,7 @@
 }
 
 .testimonials-title span {
-  color: #eb600f;
+  color: var(--primary);
 }
 
 .testimonials-content {
@@ -65,9 +65,9 @@
   align-items: center;
   justify-content: center;
   border: 1px solid rgba(235, 96, 15, 0.3);
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   background: rgba(255, 255, 255, 0.78);
-  color: #eb600f;
+  color: var(--primary);
   cursor: pointer;
   box-shadow: 0 14px 34px rgba(17, 19, 24, 0.08);
   backdrop-filter: blur(12px);
@@ -76,8 +76,8 @@
 
 .testimonials-arrows button:hover {
   transform: translateY(-2px);
-  background: #eb600f;
-  color: #ffffff;
+  background: var(--primary);
+  color: var(--surface);
   box-shadow: 0 18px 38px rgba(235, 96, 15, 0.24);
 }
 
@@ -105,7 +105,7 @@
   overflow: hidden;
   padding: 28px;
   border: 1px solid rgba(17, 19, 24, 0.1);
-  border-radius: 18px;
+  border-radius: var(--radius-feature);
   background:
     radial-gradient(circle at 98% 0%, rgba(235, 96, 15, 0.18), transparent 34%),
     linear-gradient(145deg, rgba(255, 255, 255, 0.88), rgba(255, 247, 240, 0.78));
@@ -154,14 +154,14 @@
   display: flex;
   align-items: center;
   gap: 5px;
-  color: #ff5b00;
+  color: var(--primary);
 }
 
 .testimonial-text {
   position: relative;
   z-index: 1;
   margin: 0;
-  color: #111318;
+  color: var(--ink-800);
   font-size: clamp(20px, 1.55vw, 25px);
   font-weight: 900;
   line-height: 1.26;
@@ -183,14 +183,14 @@
   height: 54px;
   flex-shrink: 0;
   object-fit: cover;
-  border: 3px solid #ffffff;
+  border: 3px solid var(--surface);
   border-radius: 50%;
   box-shadow: 0 12px 26px rgba(17, 19, 24, 0.12);
 }
 
 .testimonial-user h4 {
   margin: 0 0 5px;
-  color: #111318;
+  color: var(--ink-800);
   font-family: var(--font-body);
   font-size: 16px;
   font-weight: 900;
@@ -200,7 +200,7 @@
 
 .testimonial-user span {
   display: block;
-  color: #3f4652;
+  color: var(--ink-600);
   font-size: 13px;
   font-weight: 700;
   line-height: 1.25;
@@ -219,7 +219,7 @@
   height: 9px;
   padding: 0;
   border: 0;
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   background: rgba(17, 19, 24, 0.2);
   cursor: pointer;
   transition: width 220ms ease, background 220ms ease;
@@ -227,7 +227,7 @@
 
 .testimonial-dots button.active {
   width: 32px;
-  background: #eb600f;
+  background: var(--primary);
 }
 
 .testimonials-cta {
@@ -238,7 +238,7 @@
   margin-top: 4px;
   padding: 24px;
   border: 1px solid rgba(235, 96, 15, 0.18);
-  border-radius: 16px;
+  border-radius: var(--radius-panel);
   background:
     radial-gradient(circle at 100% 0%, rgba(235, 96, 15, 0.16), transparent 34%),
     rgba(255, 255, 255, 0.8);
@@ -248,7 +248,7 @@
 
 .testimonials-cta span {
   display: block;
-  color: #111318;
+  color: var(--ink-800);
   font-size: 21px;
   font-weight: 900;
   line-height: 1.2;
@@ -257,7 +257,7 @@
 .testimonials-cta p {
   max-width: 650px;
   margin: 7px 0 0;
-  color: #4b5563;
+  color: var(--ink-500);
   font-size: 15px;
   font-weight: 650;
   line-height: 1.5;
@@ -279,7 +279,7 @@
   justify-content: center;
   gap: 10px;
   padding: 0 22px;
-  border-radius: 10px;
+  border-radius: var(--radius-control);
   font-size: 15px;
   font-weight: 900;
   text-decoration: none;
@@ -287,16 +287,16 @@
 }
 
 .testimonials-cta-primary {
-  border: 1px solid #eb600f;
-  background: #eb600f;
-  color: #ffffff;
+  border: 1px solid var(--primary);
+  background: var(--primary);
+  color: var(--surface);
   box-shadow: 0 16px 34px rgba(235, 96, 15, 0.22);
 }
 
 .testimonials-cta-secondary {
   border: 1px solid rgba(235, 96, 15, 0.42);
-  background: #ffffff;
-  color: #eb600f;
+  background: var(--surface);
+  color: var(--primary);
 }
 
 .testimonials-cta-primary:hover,

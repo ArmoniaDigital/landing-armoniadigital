@@ -6,8 +6,8 @@ export const plans = [
     id: "launch",
     name: "Launch",
     tagline: "Ideal para empezar con presencia online.",
-    price: 399,
-    priceLabel: "$399",
+    price: 499,
+    priceLabel: "$499",
     note: "pago único",
     features: [
       "Diseño de autoridad",

@@ -65,7 +65,7 @@ export const locales = {
         {
           name: "Launch",
           description: "Ideal para empezar con presencia online.",
-          price: "$399",
+          price: "$499",
           features: ["Diseño profesional", "1 página", "Responsive", "Formulario de contacto", "Correos electrónicos corporativos"],
         },
         {
@@ -344,7 +344,7 @@ export const locales = {
       plans: [
         {
           name: "Launch",
-          price: "$399",
+          price: "$499",
           description: "Ideal para empezar con presencia online.",
         },
         {

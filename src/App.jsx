@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from "react";
+import React from "react";
 import Navbar from "./components/Navbar/Navbar";
 import Hero from "./components/Hero/Hero";
 import Stats from "./components/Stats/Stats";
@@ -20,7 +20,7 @@ import CookieConsent from "./components/CookieConsent/CookieConsent";
 
 export default function App() {
   return (
-    <>
+    <div className="vsl">
       <Navbar />
       <Hero />
       <Stats />
@@ -33,11 +33,12 @@ export default function App() {
       <FAQ />
       <FinalStat />
       <Blog />
-      <Footer />
-      <CookieConsent />
+      <Welcome />
       <Appointment />
       <Checkout />
       <Onboarding />
-    </>
+      <Footer />
+      <CookieConsent />
+    </div>
   );
 }
